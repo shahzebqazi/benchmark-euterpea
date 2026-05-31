@@ -44,6 +44,24 @@ Each run records:
 
 This is the minimum evidence needed to debug a score instead of arguing from a leaderboard number.
 
+## API-Backed Larger Models
+
+Small local models are useful for fast iteration, but larger model comparisons should use the same task prompts, verifier contracts, and generation options. Ollama Cloud runs are allowed when the raw run records the remote host and the authentication source without storing the API key.
+
+For API-backed smoke checks, use `--repeat 1` until the task set is complete. A full comparison should rerun the selected small and larger models under one shared batch id after each approved benchmark section has enough deterministic tasks to make the report meaningful.
+
+Candidate sub-30B larger models for the next smoke comparison:
+
+- `qwen3:14b`
+- `gemma3:27b`
+- `mistral-small3.2:24b`
+
+Example cloud smoke command:
+
+```bash
+python3 scripts/run_batch.py --model qwen3:14b --repeat 1 --batch-id api-large-smoke-v1 --ollama-url https://ollama.com --temperature 0.2 --num-predict 32
+```
+
 ## What This Is Not
 
 This is not a claim that small local models are representative of frontier systems. It is not a final leaderboard. It is a compact demonstration of benchmark authorship: original tasks, deterministic verifiers, provenance, failure analysis, and a public reporting surface.

@@ -7,8 +7,8 @@ Use this after the application materials are complete and the user is ready to p
 - Branch target: `feature/pre-push-ready`.
 - Public remote: `https://github.com/shahzebqazi/benchmark-euterpea`.
 - Remote publication is intentionally pending user approval.
-- Latest local audit found `ollama list` blocked by a local filesystem error: `mkdir /Users/sqazi/.ollama/models: file exists: ensure path elements are traversable`.
-- Because Ollama is blocked, the checked-in curated report is honest partial evidence, not a fabricated four-model full-suite baseline.
+- Local Ollama weights: `~/Git/Config/my-ai-models/ollama/models` (`~/.ollama/models` symlink). Playbook: `~/Git/configuration/my-ai-models/`.
+- The checked-in curated report should reflect the completed 4-model x 13-task x 10-sample baseline unless a newer run is intentionally selected.
 
 ## Validation Before Push
 
@@ -27,17 +27,17 @@ python3 scripts/build_site.py
 python3 scripts/check_links.py
 ```
 
-Expected result: each command exits `0`. `validate_repo.py` may warn when the latest report is partial by model coverage; that warning is acceptable until a full matrix is run.
+Expected result: each command exits `0`. A partial-coverage warning should be treated as a blocker unless the report is intentionally scoped to a smaller batch and documented as such.
 
-## Optional Full Baseline
+## Optional Baseline Rerun
 
-If Ollama works locally, run the full target matrix before publishing a stronger report:
+If the task suite changes, rerun the full target matrix before publishing a stronger report:
 
 ```bash
-python3 scripts/run_batch.py --model llama3.2:3b --repeat 5 --batch-id baseline-20260531-llama3.2-3b
-python3 scripts/run_batch.py --model granite3.2:2b --repeat 5 --batch-id baseline-20260531-granite3.2-2b
-python3 scripts/run_batch.py --model gemma3:1b --repeat 5 --batch-id baseline-20260531-gemma3-1b
-python3 scripts/run_batch.py --model phi4-mini --repeat 5 --batch-id baseline-20260531-phi4-mini
+python3 scripts/run_batch.py --model llama3.2:3b --repeat 10 --batch-id baseline-20260531-llama3.2-3b
+python3 scripts/run_batch.py --model granite3.2:2b --repeat 10 --batch-id baseline-20260531-granite3.2-2b
+python3 scripts/run_batch.py --model gemma3:1b --repeat 10 --batch-id baseline-20260531-gemma3-1b
+python3 scripts/run_batch.py --model phi4-mini --repeat 10 --batch-id baseline-20260531-phi4-mini
 python3 scripts/summarize_runs.py \
   --batch-id baseline-20260531-llama3.2-3b \
   --batch-id baseline-20260531-granite3.2-2b \

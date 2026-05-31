@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "basic",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return the specified JSON object with no extra keys.",
+  "domain": "structured-output",
+  "expected_answer": "{\"models\":[\"small\",\"large\"],\"status\":\"ready\"}",
+  "expected_behavior": "Return the specified JSON object with no extra keys.",
+  "expected_failure_modes": [
+    "invalid JSON",
+    "extra keys",
+    "wrong array order"
+  ],
+  "id": "json-array-enum"
+}

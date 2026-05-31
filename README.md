@@ -11,14 +11,22 @@ This is not a prompt-engineering project. Prompts are kept short and stable; exp
 Run one task against a local Ollama model:
 
 ```bash
-python3 scripts/run_task.py --model llama3.2:3b --task-dir tasks/music-theory/basic/c-major-fifth --repeat 3 --batch-id local-task-smoke
+python3 scripts/run_task.py --model llama3.2:3b --task-dir tasks/music-theory/basic/c-major-fifth --batch-id local-task-baseline
 ```
 
 Run the full executable batch:
 
 ```bash
-python3 scripts/run_batch.py --model llama3.2:3b --repeat 1 --batch-id local-batch-smoke
+python3 scripts/run_batch.py --model llama3.2:3b --batch-id local-batch-baseline
 ```
+
+Run the same batch across multiple local Ollama models:
+
+```bash
+python3 scripts/run_matrix.py --model llama3.2:3b --model phi4-mini:latest --repeat 1 --batch-id local-matrix-smoke
+```
+
+The runners default to 10 samples per task so reported accuracy reflects repeated behavior instead of a single lucky or unlucky answer. Use `--repeat 1` for smoke tests.
 
 Summarize raw runs into a curated derived report:
 
@@ -37,6 +45,22 @@ Validate task contracts, verifier contracts, prompt leakage checks, and report s
 ```bash
 python3 scripts/validate_repo.py
 ```
+
+## Reproducible External Runs
+
+Users and agents can clone this repo, run one local Ollama model, and open an issue with enough context for maintainers to recreate the findings.
+
+```bash
+git clone https://github.com/shahzebqazi/benchmark-euterpea.git
+cd benchmark-euterpea
+git rev-parse HEAD
+ollama pull <model>
+python3 scripts/run_batch.py --model <model> --repeat 10 --batch-id external-<model>-<date> --temperature 0.2 --num-predict 32
+python3 scripts/summarize_runs.py --batch-id external-<model>-<date>
+python3 scripts/build_site.py
+```
+
+Open an "Observed model failure" issue with the commit SHA, model name, batch id, repeat count, model options, Ollama version, exact reproduction commands, pass-rate summary, and notable task failures. Do not paste private prompts, credentials, or raw traces from outside this repository.
 
 View the generated site locally by opening:
 
@@ -65,11 +89,18 @@ Public report:
 
 ## Current Scope
 
-The suite includes deterministic tasks across three capability areas:
+The suite uses approved benchmark sections rather than treating every task as a top-level score category. Each section should grow to at least 10 deterministic tasks before the site makes stronger section-level claims.
 
-- Symbolic music theory: scale degrees, relative keys, key signatures, enharmonic traps, and chord spelling.
-- Agent compliance: exact output, JSON-only output, and multi-step instruction following.
-- Euterpea/Haskell stubs: symbolic pitch transposition and duration reasoning over Euterpea-like representations.
+- Music Theory Recognition
+- Tonal Spelling & Enharmonics
+- Rhythm & Duration Reasoning
+- Symbolic Transformation
+- Symbolic Music / Euterpea
+- Instruction / Output Compliance
+- Structured Output Fidelity
+- Multi-Step Constraint Following
+- Representation Translation
+- Verifier Robustness / Ambiguity Cases
 
 See `tasks/README.md` and the generated task catalog for the current task list.
 
@@ -78,7 +109,7 @@ See `tasks/README.md` and the generated task catalog for the current task list.
 Raw local runs are source data. Public reports are curated derived artifacts.
 
 - Raw run files in `data/runs/` contain one model response and all provenance needed to debug it.
-- Derived reports in `data/reports/` aggregate model/task pass rates, answer distributions, failure distributions, latency averages, batch ids, source files, and model/options samples.
+- Derived reports in `data/reports/` aggregate model/task accuracy, answer distributions, failure distributions, latency averages, batch ids, source files, and model/options samples.
 - The static site in `docs/site/dist/` is generated from the derived report and task metadata.
 
 ## Repository Layout

@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only Db,F,Ab.",
+  "domain": "chord-spelling",
+  "expected_answer": "Db,F,Ab",
+  "expected_behavior": "Return only Db,F,Ab.",
+  "expected_failure_modes": [
+    "enharmonic misspelling",
+    "delimiter error",
+    "extra prose"
+  ],
+  "id": "d-flat-major-triad-spelling"
+}

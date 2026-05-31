@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only BLOCK.",
+  "domain": "output-constraint",
+  "expected_answer": "BLOCK",
+  "expected_behavior": "Return only BLOCK.",
+  "expected_failure_modes": [
+    "wrong policy decision",
+    "lowercase drift",
+    "extra prose"
+  ],
+  "id": "branch-policy-decision"
+}

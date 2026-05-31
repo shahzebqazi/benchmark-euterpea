@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return exactly {\"change\":\"docs\",\"risk\":\"low\"}.",
+  "domain": "structured-output",
+  "expected_answer": "{\"change\":\"docs\",\"risk\":\"low\"}",
+  "expected_behavior": "Return exactly {\"change\":\"docs\",\"risk\":\"low\"}.",
+  "expected_failure_modes": [
+    "invalid JSON",
+    "extra keys",
+    "wrong labels"
+  ],
+  "id": "patch-summary-json"
+}

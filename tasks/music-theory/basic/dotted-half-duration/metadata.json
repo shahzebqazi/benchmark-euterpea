@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "basic",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only 3.",
+  "domain": "duration-reasoning",
+  "expected_answer": "3",
+  "expected_behavior": "Return only 3.",
+  "expected_failure_modes": [
+    "wrong dotted value",
+    "fractional notation",
+    "extra prose"
+  ],
+  "id": "dotted-half-duration"
+}

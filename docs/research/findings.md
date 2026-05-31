@@ -4,7 +4,7 @@ This is a short public research note for hiring readers. It summarizes what the 
 
 ## What Models Failed
 
-The current curated snapshot contains 33 schema-versioned raw runs. `llama3.2:3b` covers the full 13-task executable suite and passes 4/18 grouped samples. `gemma3:1b` and `phi4-mini` each pass 5/5 samples on `c-major-fifth`; `granite3.2:2b` fails 5/5 samples on that same task. The three non-llama models do not yet cover the full suite in this report because local Ollama is blocked in the pre-push environment.
+The current curated snapshot contains 520 schema-versioned raw runs from a 4-model x 13-task x 10-sample local baseline. `llama3.2:3b` passes 41/130 samples. `gemma3:1b`, `granite3.2:2b`, and `phi4-mini` each pass 30/130 samples. Every model covers the full executable suite in this report.
 
 The first task still demonstrates why the suite is useful. Small local models have answered `E`, `F`, `G#`, explanatory prose, and exact `G` to the same prompt: "What is the fifth note in the key of C major?" The fact is elementary, but the spread separates models that know the symbolic answer, models that count incorrectly, models that drift into adjacent pitch names, and models that know the answer but violate an output-only constraint.
 
@@ -31,6 +31,8 @@ The harness also preserves raw answers, model names, options, latency, batch ids
 
 ## What Remains Weak
 
-The benchmark is still small. It needs a successful full-suite 4-model x 5-sample matrix, more model families, broader verifier regression fixtures, and failure-corpus promotion. The Euterpea tasks are currently stubs rather than full Haskell solver tasks. Contamination controls are documented, but future growth should include unpublished variants and review of task exposure. The GitHub Pages hiscores are a curated public snapshot, not a production leaderboard.
+The benchmark is still small. It needs at least 10 deterministic tasks per approved benchmark section, more model families, broader verifier regression fixtures, and failure-corpus promotion. The Euterpea tasks are currently stubs rather than full Haskell solver tasks. Contamination controls are documented, but future growth should include unpublished variants and review of task exposure. The GitHub Pages hiscores are a curated public snapshot, not a production leaderboard.
+
+The next larger-model comparison should be API-backed rather than local-pull-based for this environment. Candidate sub-30B models are `qwen3:14b`, `gemma3:27b`, and `mistral-small3.2:24b`, but their scores should not be promoted into the public findings until the unfinished task expansion is complete and the small-model baselines can be rerun in the same report snapshot.
 
 That is the intended state for this phase: small enough to inspect, complete enough to demonstrate a repeatable method, and honest about what evidence it does and does not provide.

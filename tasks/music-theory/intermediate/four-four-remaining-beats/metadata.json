@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only 1.",
+  "domain": "meter-fit",
+  "expected_answer": "1",
+  "expected_behavior": "Return only 1.",
+  "expected_failure_modes": [
+    "wrong remaining beats",
+    "counts notes instead of duration",
+    "extra prose"
+  ],
+  "id": "four-four-remaining-beats"
+}

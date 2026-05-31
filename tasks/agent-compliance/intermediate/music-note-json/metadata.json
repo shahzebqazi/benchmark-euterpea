@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return exactly {\"note\":\"F#\",\"octave\":4}.",
+  "domain": "structured-output",
+  "expected_answer": "{\"note\":\"F#\",\"octave\":4}",
+  "expected_behavior": "Return exactly {\"note\":\"F#\",\"octave\":4}.",
+  "expected_failure_modes": [
+    "invalid JSON",
+    "extra keys",
+    "wrong types"
+  ],
+  "id": "music-note-json"
+}

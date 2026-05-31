@@ -15,6 +15,7 @@ Each raw run in `data/runs/` should preserve:
 - model name
 - harness name
 - Ollama base URL
+- Ollama authentication source, if an authenticated host is used
 - Ollama generation options
 - exact prompt shown to the model
 - raw model answer

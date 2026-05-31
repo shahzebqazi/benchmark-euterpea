@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only Ab,C,Eb,G.",
+  "domain": "chord-spelling",
+  "expected_answer": "Ab,C,Eb,G",
+  "expected_behavior": "Return only Ab,C,Eb,G.",
+  "expected_failure_modes": [
+    "wrong seventh quality",
+    "enharmonic misspelling",
+    "delimiter error"
+  ],
+  "id": "a-flat-major-seventh-chord"
+}

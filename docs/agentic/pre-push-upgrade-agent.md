@@ -56,7 +56,7 @@ The repo matches **benchmark-euterpea standard** when all of the following hold:
 
 ### B. Evidence quality (pre-push content)
 
-- [ ] **Multi-model baseline** in curated report: at minimum the four models from the Pages plan — `llama3.2:3b`, `granite3.2:2b`, `gemma3:1b`, `phi4-mini` — each with **5 samples** on the full executable task suite (or document honestly if Ollama models unavailable locally)
+- [ ] **Multi-model baseline** in curated report: at minimum the four models from the Pages plan — `llama3.2:3b`, `granite3.2:2b`, `gemma3:1b`, `phi4-mini` — each with **10 samples** on the full executable task suite (or document honestly if Ollama models unavailable locally)
 - [ ] Report includes pass rates, failure distributions, latency averages, batch ids, source file paths per ARCHITECTURE
 - [ ] `docs/research/findings.md` updated to reflect **actual** multi-model failures (not hypothetical)
 - [ ] Site `hiscores.html` renders all models in report — not single-model-only
@@ -118,10 +118,10 @@ Prepare `docs/project/LINKEDIN_CLAIMS.md` mapping:
 
 ```bash
 # Example — adjust batch ids; repeat=5 per model per task suite
-python3 scripts/run_batch.py --model llama3.2:3b --repeat 5 --batch-id baseline-20260531-llama3.2-3b
-python3 scripts/run_batch.py --model granite3.2:2b --repeat 5 --batch-id baseline-20260531-granite3.2-2b
-python3 scripts/run_batch.py --model gemma3:1b --repeat 5 --batch-id baseline-20260531-gemma3-1b
-python3 scripts/run_batch.py --model phi4-mini --repeat 5 --batch-id baseline-20260531-phi4-mini
+python3 scripts/run_batch.py --model llama3.2:3b --repeat 10 --batch-id baseline-20260531-llama3.2-3b
+python3 scripts/run_batch.py --model granite3.2:2b --repeat 10 --batch-id baseline-20260531-granite3.2-2b
+python3 scripts/run_batch.py --model gemma3:1b --repeat 10 --batch-id baseline-20260531-gemma3-1b
+python3 scripts/run_batch.py --model phi4-mini --repeat 10 --batch-id baseline-20260531-phi4-mini
 ```
 
 3. `python3 scripts/summarize_runs.py` → refresh `latest.json`.

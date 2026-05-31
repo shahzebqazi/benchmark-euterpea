@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "basic",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only G major.",
+  "domain": "relative-key",
+  "expected_answer": "G major",
+  "expected_behavior": "Return only G major.",
+  "expected_failure_modes": [
+    "wrong relative key",
+    "wrong mode",
+    "extra prose"
+  ],
+  "id": "e-minor-relative-major"
+}

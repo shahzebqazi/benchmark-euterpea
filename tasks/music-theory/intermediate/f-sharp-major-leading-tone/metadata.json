@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only E#.",
+  "domain": "enharmonic-spelling",
+  "expected_answer": "E#",
+  "expected_behavior": "Return only E#.",
+  "expected_failure_modes": [
+    "enharmonic shortcut",
+    "wrong leading tone",
+    "extra prose"
+  ],
+  "id": "f-sharp-major-leading-tone"
+}

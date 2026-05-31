@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only ACE.",
+  "domain": "multi-step-instruction",
+  "expected_answer": "ACE",
+  "expected_behavior": "Return only ACE.",
+  "expected_failure_modes": [
+    "leaks intermediate steps",
+    "wrong transform order",
+    "extra prose"
+  ],
+  "id": "ordered-transform-final"
+}

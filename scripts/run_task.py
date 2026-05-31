@@ -23,10 +23,28 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TASK_DIR = REPO_ROOT / "tasks" / "music-theory" / "basic" / "c-major-fifth"
 DEFAULT_OLLAMA_URL = "http://localhost:11434"
+DEFAULT_REPEAT = 10
 SCHEMA_VERSION = 1
 
 
+def load_env_file(path: Path) -> None:
+    if not path.is_file():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+        key, value = stripped.split("=", 1)
+        if key.startswith("export "):
+            key = key.removeprefix("export ")
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
 def parse_args() -> argparse.Namespace:
+    load_env_file(Path.home() / ".env")
     parser = argparse.ArgumentParser(
         description="Run a benchmark task against an Ollama model and save JSON results."
     )
@@ -43,11 +61,16 @@ def parse_args() -> argparse.Namespace:
         help="Ollama base URL. Defaults to OLLAMA_URL or http://localhost:11434.",
     )
     parser.add_argument(
+        "--ollama-api-key-env",
+        default="OLLAMA_API_KEY",
+        help="Environment variable containing an Ollama API key for authenticated hosts.",
+    )
+    parser.add_argument(
         "--output",
         type=Path,
         help="Output JSON path. Only valid when --repeat is 1.",
     )
-    parser.add_argument("--repeat", type=int, default=1, help="Number of samples to run.")
+    parser.add_argument("--repeat", type=int, default=DEFAULT_REPEAT, help="Number of samples to run.")
     parser.add_argument("--batch-id", help="Batch id to record and use in output filenames.")
     parser.add_argument("--seed", type=int, help="Base Ollama seed. Each repeat increments it by one.")
     parser.add_argument("--temperature", type=float, default=0.2, help="Ollama temperature.")
@@ -105,14 +128,25 @@ def load_verifier(task_dir: Path) -> ModuleType:
     return module
 
 
-def call_ollama(base_url: str, model: str, prompt: str, options: dict[str, Any]) -> dict[str, Any]:
+def call_ollama(
+    base_url: str,
+    model: str,
+    prompt: str,
+    options: dict[str, Any],
+    api_key_env: str,
+) -> dict[str, Any]:
     payload = json.dumps(
         {"model": model, "prompt": prompt, "stream": False, "options": options}
     ).encode("utf-8")
+    headers = {"Content-Type": "application/json"}
+    api_key = os.environ.get(api_key_env)
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+
     request = urllib.request.Request(
-        f"{base_url.rstrip('/')}/api/generate",
+        generate_url(base_url),
         data=payload,
-        headers={"Content-Type": "application/json"},
+        headers=headers,
         method="POST",
     )
 
@@ -125,6 +159,13 @@ def call_ollama(base_url: str, model: str, prompt: str, options: dict[str, Any])
     if not isinstance(body, dict) or "response" not in body:
         raise RuntimeError(f"Ollama response missing 'response': {body}")
     return body
+
+
+def generate_url(base_url: str) -> str:
+    base = base_url.rstrip("/")
+    if base.endswith("/api"):
+        return f"{base}/generate"
+    return f"{base}/api/generate"
 
 
 def default_output_path(task_id: str, model: str, batch_id: str, sample_index: int) -> Path:
@@ -184,7 +225,13 @@ def main() -> int:
 
         run_started = utc_now()
         started_perf = time.perf_counter()
-        response_body = call_ollama(args.ollama_url, args.model, prompt, options)
+        response_body = call_ollama(
+            args.ollama_url,
+            args.model,
+            prompt,
+            options,
+            args.ollama_api_key_env,
+        )
         latency_ms = round((time.perf_counter() - started_perf) * 1000, 3)
 
         raw_answer = str(response_body["response"])
@@ -202,6 +249,11 @@ def main() -> int:
             "model": args.model,
             "harness": "ollama-generate",
             "ollama_url": args.ollama_url,
+            "ollama_auth": (
+                f"env:{args.ollama_api_key_env}"
+                if os.environ.get(args.ollama_api_key_env)
+                else None
+            ),
             "ollama_options": options,
             "prompt": prompt,
             "raw_answer": raw_answer,
