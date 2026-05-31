@@ -1,0 +1,48 @@
+name: Benchmark task proposal
+description: Propose an original benchmark task for the backlog.
+title: "Task: "
+labels: ["task", "proposal"]
+body:
+  - type: textarea
+    id: capability
+    attributes:
+      label: Capability
+      description: What behavior should this task evaluate?
+      placeholder: Music-theory enharmonic spelling, JSON-only compliance, Euterpea duration reasoning, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Model-facing prompt
+      description: Keep expected answers out of the prompt unless the task is explicitly an exact-copy compliance task.
+    validations:
+      required: true
+  - type: textarea
+    id: verifier
+    attributes:
+      label: Deterministic verifier
+      description: What should be accepted, what should be rejected, and how should failure reasons be reported?
+    validations:
+      required: true
+  - type: textarea
+    id: contamination
+    attributes:
+      label: Contamination risk
+      description: Is this a common fact, copied wording risk, public benchmark overlap, arbitrary token, or original symbolic case?
+    validations:
+      required: true
+  - type: textarea
+    id: failure_modes
+    attributes:
+      label: Expected failure modes
+      description: List likely wrong answers and why those failures would teach something.
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Proposed category path
+      placeholder: tasks/music-theory/intermediate/g-sharp-minor-leading-tone
+    validations:
+      required: true

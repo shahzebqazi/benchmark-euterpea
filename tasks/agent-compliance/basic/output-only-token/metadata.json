@@ -1,0 +1,14 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "basic",
+  "contamination_risk": "low; arbitrary token generated for this benchmark",
+  "domain": "output-constraint",
+  "expected_answer": "COMPLY-739",
+  "expected_behavior": "Return only COMPLY-739.",
+  "expected_failure_modes": [
+    "extra prose",
+    "missing hyphen",
+    "quote wrapping"
+  ],
+  "id": "output-only-token"
+}

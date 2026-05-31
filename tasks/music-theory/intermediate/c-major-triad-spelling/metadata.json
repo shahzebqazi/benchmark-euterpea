@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "intermediate",
+  "contamination_risk": "common concept, original prompt wording and strict verifier",
+  "description": "Checks chord spelling and output delimiter compliance.",
+  "domain": "chord-spelling",
+  "expected_answer": "C,E,G",
+  "expected_behavior": "Return only C,E,G.",
+  "expected_failure_modes": [
+    "wrong symbolic answer",
+    "enharmonic misspelling",
+    "extra prose or multiple answers"
+  ],
+  "id": "c-major-triad-spelling"
+}

@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "answer": "{\"status\":\"ready\"}",
+      "passed": true
+    },
+    {
+      "answer": "{\"status\":\"ready\",\"note\":\"ok\"}",
+      "passed": false,
+      "reason_contains": "unexpected keys"
+    },
+    {
+      "answer": "```json\n{\"status\":\"ready\"}\n```",
+      "passed": false,
+      "reason_contains": "not valid JSON"
+    }
+  ],
+  "task_id": "json-only-status"
+}

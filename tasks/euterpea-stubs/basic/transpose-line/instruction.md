@@ -1,0 +1,1 @@
+Given the Euterpea-style expression line = lineToMusic [C 4 qn, E 4 qn, G 4 qn]. If each pitch is transposed up a major second, what note names result? Answer as comma-separated pitch names with octaves only.

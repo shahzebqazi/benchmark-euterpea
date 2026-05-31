@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "basic",
+  "contamination_risk": "common concept, original prompt wording and strict verifier",
+  "description": "Checks key-signature count rather than listing notes.",
+  "domain": "key-signature",
+  "expected_answer": "2",
+  "expected_behavior": "Return only 2.",
+  "expected_failure_modes": [
+    "wrong symbolic answer",
+    "enharmonic misspelling",
+    "extra prose or multiple answers"
+  ],
+  "id": "b-flat-major-key-signature"
+}

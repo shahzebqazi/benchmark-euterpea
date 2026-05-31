@@ -1,0 +1,14 @@
+{
+  "capability": "euterpea-stubs",
+  "complexity": "intermediate",
+  "contamination_risk": "low; original symbolic-duration prompt",
+  "domain": "symbolic-duration-reasoning",
+  "expected_answer": "4",
+  "expected_behavior": "Return only 4.",
+  "expected_failure_modes": [
+    "counts notes instead of duration",
+    "adds prose",
+    "uses fractional notation"
+  ],
+  "id": "haskell-duration-sum"
+}

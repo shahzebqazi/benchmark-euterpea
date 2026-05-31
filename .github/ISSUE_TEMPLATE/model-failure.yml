@@ -1,0 +1,34 @@
+name: Observed model failure
+description: Share a model failure that may become a benchmark task.
+title: "Failure: "
+labels: ["failure-corpus"]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      placeholder: phi4-mini
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt or task
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed output
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Why this matters

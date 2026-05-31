@@ -1,0 +1,709 @@
+{
+  "generated_at": "2026-05-31T17:03:00Z",
+  "results": [
+    {
+      "answer_distribution": [
+        {
+          "answer": "F# minor",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 1,
+      "failure_distribution": [
+        {
+          "count": 1,
+          "failure_reason": "Checks relative key reasoning with constrained output. Expected exactly C major."
+        }
+      ],
+      "latency_ms_avg": 261.119,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_a-minor-relative-major_llama3.2-3b_001.json"
+      ],
+      "task_id": "a-minor-relative-major",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks relative key reasoning with constrained output.",
+        "domain": "relative-key",
+        "expected_answer": "C major",
+        "expected_behavior": "Return only C major.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "a-minor-relative-major"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "2",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 211.497,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 1,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_b-flat-major-key-signature_llama3.2-3b_001.json"
+      ],
+      "task_id": "b-flat-major-key-signature",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks key-signature count rather than listing notes.",
+        "domain": "key-signature",
+        "expected_answer": "2",
+        "expected_behavior": "Return only 2.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "b-flat-major-key-signature"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "G\n",
+          "count": 5
+        }
+      ],
+      "batch_ids": [
+        "site-baseline-20260531"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 606.035,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 5,
+      "runs": 5,
+      "source_files": [
+        "data/runs/site-baseline-20260531_c-major-fifth_gemma3-1b_001.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_gemma3-1b_002.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_gemma3-1b_003.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_gemma3-1b_004.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_gemma3-1b_005.json"
+      ],
+      "task_id": "c-major-fifth",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "domain": "diatonic-scale-degree",
+        "expected_behavior": "Return only the note name G.",
+        "id": "c-major-fifth"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F",
+          "count": 5
+        }
+      ],
+      "batch_ids": [
+        "site-baseline-20260531"
+      ],
+      "failed": 5,
+      "failure_distribution": [
+        {
+          "count": 5,
+          "failure_reason": "answer must be exactly G after whitespace and case normalization"
+        }
+      ],
+      "latency_ms_avg": 534.045,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 5,
+      "source_files": [
+        "data/runs/site-baseline-20260531_c-major-fifth_granite3.2-2b_001.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_granite3.2-2b_002.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_granite3.2-2b_003.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_granite3.2-2b_004.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_granite3.2-2b_005.json"
+      ],
+      "task_id": "c-major-fifth",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "domain": "diatonic-scale-degree",
+        "expected_behavior": "Return only the note name G.",
+        "id": "c-major-fifth"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "E",
+          "count": 6
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b",
+        "site-baseline-20260531"
+      ],
+      "failed": 6,
+      "failure_distribution": [
+        {
+          "count": 5,
+          "failure_reason": "answer must be exactly G after whitespace and case normalization"
+        },
+        {
+          "count": 1,
+          "failure_reason": "Tests basic scale-degree mapping without prose. Expected exactly G."
+        }
+      ],
+      "latency_ms_avg": 550.381,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 6,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_c-major-fifth_llama3.2-3b_001.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_llama3.2-3b_001.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_llama3.2-3b_002.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_llama3.2-3b_003.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_llama3.2-3b_004.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_llama3.2-3b_005.json"
+      ],
+      "task_id": "c-major-fifth",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Tests basic scale-degree mapping without prose.",
+        "domain": "diatonic-scale-degree",
+        "expected_answer": "G",
+        "expected_behavior": "Return only G.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "c-major-fifth"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "G",
+          "count": 5
+        }
+      ],
+      "batch_ids": [
+        "site-baseline-20260531"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 808.139,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 5,
+      "runs": 5,
+      "source_files": [
+        "data/runs/site-baseline-20260531_c-major-fifth_phi4-mini_001.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_phi4-mini_002.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_phi4-mini_003.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_phi4-mini_004.json",
+        "data/runs/site-baseline-20260531_c-major-fifth_phi4-mini_005.json"
+      ],
+      "task_id": "c-major-fifth",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "domain": "diatonic-scale-degree",
+        "expected_behavior": "Return only the note name G.",
+        "id": "c-major-fifth"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "C, E, G",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 1,
+      "failure_distribution": [
+        {
+          "count": 1,
+          "failure_reason": "extra prose or multiple tokens; expected exactly C,E,G"
+        }
+      ],
+      "latency_ms_avg": 292.006,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_c-major-triad-spelling_llama3.2-3b_001.json"
+      ],
+      "task_id": "c-major-triad-spelling",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks chord spelling and output delimiter compliance.",
+        "domain": "chord-spelling",
+        "expected_answer": "C,E,G",
+        "expected_behavior": "Return only C,E,G.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "c-major-triad-spelling"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F#",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 214.169,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 1,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_d-major-third_llama3.2-3b_001.json"
+      ],
+      "task_id": "d-major-third",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Distinguishes major-scale spelling from white-key counting.",
+        "domain": "diatonic-scale-degree",
+        "expected_answer": "F#",
+        "expected_behavior": "Return only F#.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "d-major-third"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F.",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 1,
+      "failure_distribution": [
+        {
+          "count": 1,
+          "failure_reason": "Catches models that avoid or over-explain enharmonic traps. Expected exactly F."
+        }
+      ],
+      "latency_ms_avg": 217.05,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_e-sharp-enharmonic_llama3.2-3b_001.json"
+      ],
+      "task_id": "e-sharp-enharmonic",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Catches models that avoid or over-explain enharmonic traps.",
+        "domain": "enharmonic-spelling",
+        "expected_answer": "F",
+        "expected_behavior": "Return only F.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "e-sharp-enharmonic"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "Bb.",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 1,
+      "failure_distribution": [
+        {
+          "count": 1,
+          "failure_reason": "Checks flat-key signature recall and exact spelling. Expected exactly Bb."
+        }
+      ],
+      "latency_ms_avg": 249.349,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_f-major-key-signature_llama3.2-3b_001.json"
+      ],
+      "task_id": "f-major-key-signature",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks flat-key signature recall and exact spelling.",
+        "domain": "key-signature",
+        "expected_answer": "Bb",
+        "expected_behavior": "Return only Bb.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "f-major-key-signature"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "Bb",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 1,
+      "failure_distribution": [
+        {
+          "count": 1,
+          "failure_reason": "Requires double-sharp spelling, not the easier enharmonic G. Expected exactly Fx."
+        }
+      ],
+      "latency_ms_avg": 233.742,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_g-sharp-minor-leading-tone_llama3.2-3b_001.json"
+      ],
+      "task_id": "g-sharp-minor-leading-tone",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Requires double-sharp spelling, not the easier enharmonic G.",
+        "domain": "enharmonic-spelling",
+        "expected_answer": "Fx",
+        "expected_behavior": "Return only Fx.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "g-sharp-minor-leading-tone"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "3",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 1,
+      "failure_distribution": [
+        {
+          "count": 1,
+          "failure_reason": "Two quarter notes plus one half note equals four quarter-note units. Expected exactly 4."
+        }
+      ],
+      "latency_ms_avg": 254.097,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_haskell-duration-sum_llama3.2-3b_001.json"
+      ],
+      "task_id": "haskell-duration-sum",
+      "task_metadata": {
+        "capability": "euterpea-stubs",
+        "complexity": "intermediate",
+        "contamination_risk": "low; original symbolic-duration prompt",
+        "domain": "symbolic-duration-reasoning",
+        "expected_answer": "4",
+        "expected_behavior": "Return only 4.",
+        "expected_failure_modes": [
+          "counts notes instead of duration",
+          "adds prose",
+          "uses fractional notation"
+        ],
+        "id": "haskell-duration-sum"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "{\"status\": \"ready\"}",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 2483.669,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 1,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_json-only-status_llama3.2-3b_001.json"
+      ],
+      "task_id": "json-only-status",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "basic",
+        "contamination_risk": "low; synthetic instruction-following case",
+        "domain": "structured-output",
+        "expected_answer": "{\"status\":\"ready\"}",
+        "expected_behavior": "Return exactly {\"status\":\"ready\"} as parseable JSON with no other keys.",
+        "expected_failure_modes": [
+          "markdown fence",
+          "extra keys",
+          "invalid JSON",
+          "wrong value"
+        ],
+        "id": "json-only-status"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "The second letter in the word \"agent\" is 'e'.\n\n'e'e'e'",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 1,
+      "failure_distribution": [
+        {
+          "count": 1,
+          "failure_reason": "extra prose or multiple tokens; expected exactly ggg"
+        }
+      ],
+      "latency_ms_avg": 590.254,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_multi-step-output_llama3.2-3b_001.json"
+      ],
+      "task_id": "multi-step-output",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "intermediate",
+        "contamination_risk": "low; synthetic multi-step instruction",
+        "domain": "multi-step-instruction",
+        "expected_answer": "ggg",
+        "expected_behavior": "Return only ggg.",
+        "expected_failure_modes": [
+          "answers intermediate step",
+          "uppercase drift",
+          "extra explanation",
+          "wrong repeated character"
+        ],
+        "id": "multi-step-output"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "COMPLY-739",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 281.329,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 1,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_output-only-token_llama3.2-3b_001.json"
+      ],
+      "task_id": "output-only-token",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "basic",
+        "contamination_risk": "low; arbitrary token generated for this benchmark",
+        "domain": "output-constraint",
+        "expected_answer": "COMPLY-739",
+        "expected_behavior": "Return only COMPLY-739.",
+        "expected_failure_modes": [
+          "extra prose",
+          "missing hyphen",
+          "quote wrapping"
+        ],
+        "id": "output-only-token"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "To transpose the notes up a major second, we need to find the note that is two semitones above each of the original pitches.\n\nC 4 becomes",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 1,
+      "failure_distribution": [
+        {
+          "count": 1,
+          "failure_reason": "extra prose or multiple tokens; expected exactly D4,F#4,A4"
+        }
+      ],
+      "latency_ms_avg": 1305.931,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 1,
+      "source_files": [
+        "data/runs/local-ollama-20260531-llama3.2-3b_transpose-line_llama3.2-3b_001.json"
+      ],
+      "task_id": "transpose-line",
+      "task_metadata": {
+        "capability": "euterpea-stubs",
+        "complexity": "basic",
+        "contamination_risk": "low; original Euterpea-style expression",
+        "domain": "symbolic-music-representation",
+        "expected_answer": "D4,F#4,A4",
+        "expected_behavior": "Return only D4,F#4,A4.",
+        "expected_failure_modes": [
+          "misses accidental",
+          "drops octaves",
+          "returns code instead of result"
+        ],
+        "id": "transpose-line"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "source_run_count": 33
+}

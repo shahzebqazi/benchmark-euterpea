@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "intermediate",
+  "contamination_risk": "common concept, original prompt wording and strict verifier",
+  "description": "Catches models that avoid or over-explain enharmonic traps.",
+  "domain": "enharmonic-spelling",
+  "expected_answer": "F",
+  "expected_behavior": "Return only F.",
+  "expected_failure_modes": [
+    "wrong symbolic answer",
+    "enharmonic misspelling",
+    "extra prose or multiple answers"
+  ],
+  "id": "e-sharp-enharmonic"
+}

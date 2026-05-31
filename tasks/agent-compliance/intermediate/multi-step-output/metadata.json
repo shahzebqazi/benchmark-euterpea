@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "intermediate",
+  "contamination_risk": "low; synthetic multi-step instruction",
+  "domain": "multi-step-instruction",
+  "expected_answer": "ggg",
+  "expected_behavior": "Return only ggg.",
+  "expected_failure_modes": [
+    "answers intermediate step",
+    "uppercase drift",
+    "extra explanation",
+    "wrong repeated character"
+  ],
+  "id": "multi-step-output"
+}

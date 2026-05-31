@@ -1,0 +1,34 @@
+name: Verifier bug
+description: Report a grading or verifier issue.
+title: "Verifier bug: "
+labels: ["verifier"]
+body:
+  - type: input
+    id: task
+    attributes:
+      label: Task id or path
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Model output
+    validations:
+      required: true
+  - type: dropdown
+    id: bug_type
+    attributes:
+      label: Bug type
+      options:
+        - False positive
+        - False negative
+        - Ambiguous task
+        - Runtime error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected grading
+    validations:
+      required: true

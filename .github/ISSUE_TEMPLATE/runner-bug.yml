@@ -1,0 +1,24 @@
+name: Runner bug
+description: Report harness, Ollama, or report-generation problems.
+title: "Runner bug: "
+labels: ["runner"]
+body:
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output or error
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: macOS, Python version, Ollama version

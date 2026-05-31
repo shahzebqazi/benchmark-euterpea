@@ -1,0 +1,14 @@
+{
+  "capability": "euterpea-stubs",
+  "complexity": "basic",
+  "contamination_risk": "low; original Euterpea-style expression",
+  "domain": "symbolic-music-representation",
+  "expected_answer": "D4,F#4,A4",
+  "expected_behavior": "Return only D4,F#4,A4.",
+  "expected_failure_modes": [
+    "misses accidental",
+    "drops octaves",
+    "returns code instead of result"
+  ],
+  "id": "transpose-line"
+}

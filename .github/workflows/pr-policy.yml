@@ -1,0 +1,54 @@
+name: PR Policy
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  branch-policy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check agent branch prefix
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          case "$HEAD_REF" in
+            feature/*|bugfix/*|docs/*|tests/*|audit/*|ui/*|chore/*)
+              echo "branch name accepted: $HEAD_REF"
+              ;;
+            *)
+              echo "Branch must start with feature/, bugfix/, docs/, tests/, audit/, ui/, or chore/. Got: $HEAD_REF" >&2
+              exit 1
+              ;;
+          esac
+
+  auto-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile Python
+        run: python -m py_compile scripts/*.py $(find tasks -name 'verifier.py' -print)
+      - name: Validate repository contracts
+        run: python scripts/validate_repo.py
+      - name: Regenerate report smoke test
+        run: python scripts/summarize_runs.py
+      - name: Build site smoke test
+        run: python scripts/build_site.py
+      - name: Auto review summary
+        run: |
+          cat <<'EOF' >> "$GITHUB_STEP_SUMMARY"
+          ## Auto PR Review
+
+          Mechanical checks completed:
+
+          - Branch prefix policy
+          - Python compile
+          - Repository contract validation
+          - Report generation smoke test
+          - Static site build smoke test
+
+          Human review is still required for verifier acceptance changes, report schema changes, CI/deploy/security changes, raw data publication decisions, or public benchmark claims.
+          EOF

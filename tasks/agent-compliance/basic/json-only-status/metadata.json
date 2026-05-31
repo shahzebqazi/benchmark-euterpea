@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "basic",
+  "contamination_risk": "low; synthetic instruction-following case",
+  "domain": "structured-output",
+  "expected_answer": "{\"status\":\"ready\"}",
+  "expected_behavior": "Return exactly {\"status\":\"ready\"} as parseable JSON with no other keys.",
+  "expected_failure_modes": [
+    "markdown fence",
+    "extra keys",
+    "invalid JSON",
+    "wrong value"
+  ],
+  "id": "json-only-status"
+}

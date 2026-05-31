@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "basic",
+  "contamination_risk": "common concept, original prompt wording and strict verifier",
+  "description": "Tests basic scale-degree mapping without prose.",
+  "domain": "diatonic-scale-degree",
+  "expected_answer": "G",
+  "expected_behavior": "Return only G.",
+  "expected_failure_modes": [
+    "wrong symbolic answer",
+    "enharmonic misspelling",
+    "extra prose or multiple answers"
+  ],
+  "id": "c-major-fifth"
+}

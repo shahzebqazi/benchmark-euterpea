@@ -1,0 +1,10 @@
+# Raw run JSON is local source evidence by default. Commit only selected,
+# reviewed sample runs when a human explicitly approves publication.
+data/runs/*.json
+
+# The site is regenerated from data/reports/latest.json by scripts/build_site.py
+# and uploaded by GitHub Actions Pages; keep local build output out of git.
+docs/site/dist/
+
+__pycache__/
+*.pyc

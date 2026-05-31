@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "answer": "G",
+      "passed": true
+    },
+    {
+      "answer": "E",
+      "passed": false,
+      "reason_contains": "exactly G"
+    },
+    {
+      "answer": "The answer is G.",
+      "passed": false,
+      "reason_contains": "extra prose"
+    }
+  ],
+  "task_id": "c-major-fifth"
+}

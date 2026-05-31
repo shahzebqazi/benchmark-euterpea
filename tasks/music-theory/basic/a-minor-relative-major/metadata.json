@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "basic",
+  "contamination_risk": "common concept, original prompt wording and strict verifier",
+  "description": "Checks relative key reasoning with constrained output.",
+  "domain": "relative-key",
+  "expected_answer": "C major",
+  "expected_behavior": "Return only C major.",
+  "expected_failure_modes": [
+    "wrong symbolic answer",
+    "enharmonic misspelling",
+    "extra prose or multiple answers"
+  ],
+  "id": "a-minor-relative-major"
+}
