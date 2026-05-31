@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only false-negative.",
+  "domain": "output-constraint",
+  "expected_answer": "false-negative",
+  "expected_behavior": "Return only false-negative.",
+  "expected_failure_modes": [
+    "wrong verifier diagnosis",
+    "extra prose",
+    "case mismatch"
+  ],
+  "id": "verifier-false-negative-label"
+}

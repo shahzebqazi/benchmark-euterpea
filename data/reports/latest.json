@@ -1,32 +1,186 @@
 {
-  "generated_at": "2026-05-31T17:03:00Z",
+  "generated_at": "2026-05-31T20:09:32Z",
   "results": [
     {
       "answer_distribution": [
         {
-          "answer": "F# minor",
+          "answer": "C Major",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 300.776,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312076, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312077, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312078, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312079, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312080, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312081, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312082, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312083, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312084, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312085, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 10,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_gemma3-1b_010.json"
+      ],
+      "task_id": "a-minor-relative-major",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks relative key reasoning with constrained output.",
+        "domain": "relative-key",
+        "expected_answer": "C major",
+        "expected_behavior": "Return only C major.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "a-minor-relative-major"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "A major (A)",
+          "count": 6
+        },
+        {
+          "answer": "The relative major of A minor is D major.",
+          "count": 3
+        },
+        {
+          "answer": "A\u266d Major",
           "count": 1
         }
       ],
       "batch_ids": [
-        "local-ollama-20260531-llama3.2-3b"
+        "baseline-20260531-10sample-v1"
       ],
-      "failed": 1,
+      "failed": 10,
       "failure_distribution": [
+        {
+          "count": 9,
+          "failure_reason": "extra prose or multiple tokens; expected exactly C major"
+        },
         {
           "count": 1,
           "failure_reason": "Checks relative key reasoning with constrained output. Expected exactly C major."
         }
       ],
-      "latency_ms_avg": 261.119,
+      "latency_ms_avg": 163.81,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312076, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312077, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312078, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312079, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312080, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312081, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312082, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312083, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312084, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312085, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_granite3.2-2b_010.json"
+      ],
+      "task_id": "a-minor-relative-major",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks relative key reasoning with constrained output.",
+        "domain": "relative-key",
+        "expected_answer": "C major",
+        "expected_behavior": "Return only C major.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "a-minor-relative-major"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F# minor",
+          "count": 11
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 11,
+      "failure_distribution": [
+        {
+          "count": 11,
+          "failure_reason": "Checks relative key reasoning with constrained output. Expected exactly C major."
+        }
+      ],
+      "latency_ms_avg": 227.168,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312076, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312077, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312078, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312079, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312080, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312081, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312082, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312083, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312084, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312085, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 1,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_a-minor-relative-major_llama3.2-3b_001.json"
       ],
       "task_id": "a-minor-relative-major",
@@ -49,24 +203,258 @@
     {
       "answer_distribution": [
         {
-          "answer": "2",
+          "answer": "C Major",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 228.687,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312076, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312077, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312078, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312079, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312080, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312081, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312082, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312083, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312084, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312085, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 10,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_a-minor-relative-major_phi4-mini_010.json"
+      ],
+      "task_id": "a-minor-relative-major",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks relative key reasoning with constrained output.",
+        "domain": "relative-key",
+        "expected_answer": "C major",
+        "expected_behavior": "Return only C major.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "a-minor-relative-major"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "6",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Checks key-signature count rather than listing notes. Expected exactly 2."
+        }
+      ],
+      "latency_ms_avg": 281.406,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312086, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312087, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312088, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312089, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312090, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312091, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312092, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312093, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312094, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312095, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_gemma3-1b_010.json"
+      ],
+      "task_id": "b-flat-major-key-signature",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks key-signature count rather than listing notes.",
+        "domain": "key-signature",
+        "expected_answer": "2",
+        "expected_behavior": "Return only 2.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "b-flat-major-key-signature"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "5",
+          "count": 6
+        },
+        {
+          "answer": "7",
+          "count": 2
+        },
+        {
+          "answer": "1 (The key signature for B\u266d major includes one flat.)",
+          "count": 1
+        },
+        {
+          "answer": "1",
           "count": 1
         }
       ],
       "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 9,
+          "failure_reason": "Checks key-signature count rather than listing notes. Expected exactly 2."
+        },
+        {
+          "count": 1,
+          "failure_reason": "extra prose or multiple tokens; expected exactly 2"
+        }
+      ],
+      "latency_ms_avg": 102.707,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312086, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312087, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312088, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312089, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312090, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312091, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312092, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312093, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312094, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312095, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_granite3.2-2b_010.json"
+      ],
+      "task_id": "b-flat-major-key-signature",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks key-signature count rather than listing notes.",
+        "domain": "key-signature",
+        "expected_answer": "2",
+        "expected_behavior": "Return only 2.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "b-flat-major-key-signature"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "2",
+          "count": 9
+        },
+        {
+          "answer": "4",
+          "count": 1
+        },
+        {
+          "answer": "0",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
         "local-ollama-20260531-llama3.2-3b"
       ],
-      "failed": 0,
-      "failure_distribution": [],
-      "latency_ms_avg": 211.497,
+      "failed": 2,
+      "failure_distribution": [
+        {
+          "count": 2,
+          "failure_reason": "Checks key-signature count rather than listing notes. Expected exactly 2."
+        }
+      ],
+      "latency_ms_avg": 208.525,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312086, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312087, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312088, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312089, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312090, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312091, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312092, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312093, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312094, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312095, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
-      "pass_rate": 1.0,
-      "passed": 1,
-      "runs": 1,
+      "pass_rate": 0.8182,
+      "passed": 9,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_b-flat-major-key-signature_llama3.2-3b_001.json"
       ],
       "task_id": "b-flat-major-key-signature",
@@ -89,28 +477,128 @@
     {
       "answer_distribution": [
         {
-          "answer": "G\n",
+          "answer": "5",
           "count": 5
+        },
+        {
+          "answer": "7",
+          "count": 3
+        },
+        {
+          "answer": "Five",
+          "count": 1
+        },
+        {
+          "answer": "Key signatures consist of sharps or flats, not both simultaneously for a single piece; however, if you're asking about how many flat notes there would be on their",
+          "count": 1
         }
       ],
       "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 9,
+          "failure_reason": "Checks key-signature count rather than listing notes. Expected exactly 2."
+        },
+        {
+          "count": 1,
+          "failure_reason": "extra prose or multiple tokens; expected exactly 2"
+        }
+      ],
+      "latency_ms_avg": 288.467,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312086, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312087, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312088, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312089, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312090, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312091, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312092, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312093, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312094, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312095, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_b-flat-major-key-signature_phi4-mini_010.json"
+      ],
+      "task_id": "b-flat-major-key-signature",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks key-signature count rather than listing notes.",
+        "domain": "key-signature",
+        "expected_answer": "2",
+        "expected_behavior": "Return only 2.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "b-flat-major-key-signature"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "G\n",
+          "count": 15
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
         "site-baseline-20260531"
       ],
       "failed": 0,
       "failure_distribution": [],
-      "latency_ms_avg": 606.035,
+      "latency_ms_avg": 496.569,
       "model": "gemma3:1b",
       "model_options": [
         "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
-        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}"
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312096, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312097, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312098, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312099, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312100, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312101, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312102, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312103, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312104, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312105, \"temperature\": 0.2}"
       ],
       "pass_rate": 1.0,
-      "passed": 5,
-      "runs": 5,
+      "passed": 15,
+      "runs": 15,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_gemma3-1b_010.json",
         "data/runs/site-baseline-20260531_c-major-fifth_gemma3-1b_001.json",
         "data/runs/site-baseline-20260531_c-major-fifth_gemma3-1b_002.json",
         "data/runs/site-baseline-20260531_c-major-fifth_gemma3-1b_003.json",
@@ -121,8 +609,16 @@
       "task_metadata": {
         "capability": "music-theory",
         "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Tests basic scale-degree mapping without prose.",
         "domain": "diatonic-scale-degree",
-        "expected_behavior": "Return only the note name G.",
+        "expected_answer": "G",
+        "expected_behavior": "Return only G.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
         "id": "c-major-fifth"
       }
     },
@@ -130,32 +626,57 @@
       "answer_distribution": [
         {
           "answer": "F",
-          "count": 5
+          "count": 15
         }
       ],
       "batch_ids": [
+        "baseline-20260531-10sample-v1",
         "site-baseline-20260531"
       ],
-      "failed": 5,
+      "failed": 15,
       "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Tests basic scale-degree mapping without prose. Expected exactly G."
+        },
         {
           "count": 5,
           "failure_reason": "answer must be exactly G after whitespace and case normalization"
         }
       ],
-      "latency_ms_avg": 534.045,
+      "latency_ms_avg": 227.02,
       "model": "granite3.2:2b",
       "model_options": [
         "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
-        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}"
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312096, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312097, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312098, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312099, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312100, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312101, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312102, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312103, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312104, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312105, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 5,
+      "runs": 15,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_granite3.2-2b_010.json",
         "data/runs/site-baseline-20260531_c-major-fifth_granite3.2-2b_001.json",
         "data/runs/site-baseline-20260531_c-major-fifth_granite3.2-2b_002.json",
         "data/runs/site-baseline-20260531_c-major-fifth_granite3.2-2b_003.json",
@@ -166,8 +687,16 @@
       "task_metadata": {
         "capability": "music-theory",
         "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Tests basic scale-degree mapping without prose.",
         "domain": "diatonic-scale-degree",
-        "expected_behavior": "Return only the note name G.",
+        "expected_answer": "G",
+        "expected_behavior": "Return only G.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
         "id": "c-major-fifth"
       }
     },
@@ -175,25 +704,30 @@
       "answer_distribution": [
         {
           "answer": "E",
-          "count": 6
+          "count": 13
+        },
+        {
+          "answer": "G#",
+          "count": 3
         }
       ],
       "batch_ids": [
+        "baseline-20260531-10sample-v1",
         "local-ollama-20260531-llama3.2-3b",
         "site-baseline-20260531"
       ],
-      "failed": 6,
+      "failed": 16,
       "failure_distribution": [
+        {
+          "count": 11,
+          "failure_reason": "Tests basic scale-degree mapping without prose. Expected exactly G."
+        },
         {
           "count": 5,
           "failure_reason": "answer must be exactly G after whitespace and case normalization"
-        },
-        {
-          "count": 1,
-          "failure_reason": "Tests basic scale-degree mapping without prose. Expected exactly G."
         }
       ],
-      "latency_ms_avg": 550.381,
+      "latency_ms_avg": 336.203,
       "model": "llama3.2:3b",
       "model_options": [
         "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
@@ -201,12 +735,32 @@
         "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312096, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312097, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312098, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312099, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312100, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312101, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312102, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312103, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312104, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312105, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 6,
+      "runs": 16,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_c-major-fifth_llama3.2-3b_001.json",
         "data/runs/site-baseline-20260531_c-major-fifth_llama3.2-3b_001.json",
         "data/runs/site-baseline-20260531_c-major-fifth_llama3.2-3b_002.json",
@@ -235,27 +789,48 @@
       "answer_distribution": [
         {
           "answer": "G",
-          "count": 5
+          "count": 15
         }
       ],
       "batch_ids": [
+        "baseline-20260531-10sample-v1",
         "site-baseline-20260531"
       ],
       "failed": 0,
       "failure_distribution": [],
-      "latency_ms_avg": 808.139,
+      "latency_ms_avg": 432.959,
       "model": "phi4-mini",
       "model_options": [
         "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
-        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}"
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312096, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312097, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312098, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312099, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312100, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312101, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312102, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312103, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312104, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312105, \"temperature\": 0.2}"
       ],
       "pass_rate": 1.0,
-      "passed": 5,
-      "runs": 5,
+      "passed": 15,
+      "runs": 15,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-fifth_phi4-mini_010.json",
         "data/runs/site-baseline-20260531_c-major-fifth_phi4-mini_001.json",
         "data/runs/site-baseline-20260531_c-major-fifth_phi4-mini_002.json",
         "data/runs/site-baseline-20260531_c-major-fifth_phi4-mini_003.json",
@@ -266,37 +841,192 @@
       "task_metadata": {
         "capability": "music-theory",
         "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Tests basic scale-degree mapping without prose.",
         "domain": "diatonic-scale-degree",
-        "expected_behavior": "Return only the note name G.",
+        "expected_answer": "G",
+        "expected_behavior": "Return only G.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
         "id": "c-major-fifth"
       }
     },
     {
       "answer_distribution": [
         {
-          "answer": "C, E, G",
-          "count": 1
+          "answer": "C, E, G\n",
+          "count": 10
         }
       ],
       "batch_ids": [
-        "local-ollama-20260531-llama3.2-3b"
+        "baseline-20260531-10sample-v1"
       ],
-      "failed": 1,
+      "failed": 10,
       "failure_distribution": [
         {
-          "count": 1,
+          "count": 10,
           "failure_reason": "extra prose or multiple tokens; expected exactly C,E,G"
         }
       ],
-      "latency_ms_avg": 292.006,
+      "latency_ms_avg": 341.473,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312126, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312127, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312128, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312129, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312130, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312131, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312132, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312133, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312134, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312135, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_gemma3-1b_010.json"
+      ],
+      "task_id": "c-major-triad-spelling",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks chord spelling and output delimiter compliance.",
+        "domain": "chord-spelling",
+        "expected_answer": "C,E,G",
+        "expected_behavior": "Return only C,E,G.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "c-major-triad-spelling"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "C, E, G",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "extra prose or multiple tokens; expected exactly C,E,G"
+        }
+      ],
+      "latency_ms_avg": 167.422,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312126, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312127, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312128, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312129, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312130, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312131, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312132, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312133, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312134, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312135, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_granite3.2-2b_010.json"
+      ],
+      "task_id": "c-major-triad-spelling",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks chord spelling and output delimiter compliance.",
+        "domain": "chord-spelling",
+        "expected_answer": "C,E,G",
+        "expected_behavior": "Return only C,E,G.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "c-major-triad-spelling"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "C, E, G",
+          "count": 11
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 11,
+      "failure_distribution": [
+        {
+          "count": 11,
+          "failure_reason": "extra prose or multiple tokens; expected exactly C,E,G"
+        }
+      ],
+      "latency_ms_avg": 251.337,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312126, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312127, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312128, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312129, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312130, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312131, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312132, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312133, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312134, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312135, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 1,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_c-major-triad-spelling_llama3.2-3b_001.json"
       ],
       "task_id": "c-major-triad-spelling",
@@ -319,24 +1049,263 @@
     {
       "answer_distribution": [
         {
-          "answer": "F#",
+          "answer": "C,E,G,B,D,F,A,C",
+          "count": 8
+        },
+        {
+          "answer": "C,E,G,B,D,F#",
+          "count": 1
+        },
+        {
+          "answer": "C,E,G,A,C,E,G,B,F#",
           "count": 1
         }
       ],
       "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Checks chord spelling and output delimiter compliance. Expected exactly C,E,G."
+        }
+      ],
+      "latency_ms_avg": 399.478,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312126, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312127, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312128, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312129, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312130, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312131, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312132, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312133, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312134, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312135, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_c-major-triad-spelling_phi4-mini_010.json"
+      ],
+      "task_id": "c-major-triad-spelling",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks chord spelling and output delimiter compliance.",
+        "domain": "chord-spelling",
+        "expected_answer": "C,E,G",
+        "expected_behavior": "Return only C,E,G.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "c-major-triad-spelling"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "E",
+          "count": 4
+        },
+        {
+          "answer": "E\n",
+          "count": 3
+        },
+        {
+          "answer": "E#",
+          "count": 3
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Distinguishes major-scale spelling from white-key counting. Expected exactly F#."
+        }
+      ],
+      "latency_ms_avg": 290.416,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312106, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312107, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312108, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312109, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312110, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312111, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312112, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312113, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312114, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312115, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_gemma3-1b_010.json"
+      ],
+      "task_id": "d-major-third",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Distinguishes major-scale spelling from white-key counting.",
+        "domain": "diatonic-scale-degree",
+        "expected_answer": "F#",
+        "expected_behavior": "Return only F#.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "d-major-third"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "C",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Distinguishes major-scale spelling from white-key counting. Expected exactly F#."
+        }
+      ],
+      "latency_ms_avg": 73.423,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312106, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312107, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312108, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312109, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312110, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312111, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312112, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312113, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312114, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312115, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_granite3.2-2b_010.json"
+      ],
+      "task_id": "d-major-third",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Distinguishes major-scale spelling from white-key counting.",
+        "domain": "diatonic-scale-degree",
+        "expected_answer": "F#",
+        "expected_behavior": "Return only F#.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "d-major-third"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F#",
+          "count": 5
+        },
+        {
+          "answer": "E",
+          "count": 5
+        },
+        {
+          "answer": "E.",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
         "local-ollama-20260531-llama3.2-3b"
       ],
-      "failed": 0,
-      "failure_distribution": [],
-      "latency_ms_avg": 214.169,
+      "failed": 6,
+      "failure_distribution": [
+        {
+          "count": 6,
+          "failure_reason": "Distinguishes major-scale spelling from white-key counting. Expected exactly F#."
+        }
+      ],
+      "latency_ms_avg": 192.469,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312106, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312107, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312108, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312109, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312110, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312111, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312112, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312113, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312114, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312115, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
-      "pass_rate": 1.0,
-      "passed": 1,
-      "runs": 1,
+      "pass_rate": 0.4545,
+      "passed": 5,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_d-major-third_llama3.2-3b_001.json"
       ],
       "task_id": "d-major-third",
@@ -359,29 +1328,242 @@
     {
       "answer_distribution": [
         {
-          "answer": "F.",
-          "count": 1
+          "answer": "C#",
+          "count": 10
         }
       ],
       "batch_ids": [
-        "local-ollama-20260531-llama3.2-3b"
+        "baseline-20260531-10sample-v1"
       ],
-      "failed": 1,
+      "failed": 10,
       "failure_distribution": [
         {
-          "count": 1,
-          "failure_reason": "Catches models that avoid or over-explain enharmonic traps. Expected exactly F."
+          "count": 10,
+          "failure_reason": "Distinguishes major-scale spelling from white-key counting. Expected exactly F#."
         }
       ],
-      "latency_ms_avg": 217.05,
-      "model": "llama3.2:3b",
+      "latency_ms_avg": 216.236,
+      "model": "phi4-mini",
       "model_options": [
-        "{\"num_predict\": 32, \"temperature\": 0.2}"
+        "{\"num_predict\": 32, \"seed\": 5312106, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312107, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312108, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312109, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312110, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312111, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312112, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312113, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312114, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312115, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 1,
+      "runs": 10,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_d-major-third_phi4-mini_010.json"
+      ],
+      "task_id": "d-major-third",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Distinguishes major-scale spelling from white-key counting.",
+        "domain": "diatonic-scale-degree",
+        "expected_answer": "F#",
+        "expected_behavior": "Return only F#.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "d-major-third"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F#",
+          "count": 8
+        },
+        {
+          "answer": "G#",
+          "count": 2
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Catches models that avoid or over-explain enharmonic traps. Expected exactly F."
+        }
+      ],
+      "latency_ms_avg": 291.211,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312136, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312137, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312138, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312139, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312140, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312141, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312142, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312143, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312144, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312145, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_gemma3-1b_010.json"
+      ],
+      "task_id": "e-sharp-enharmonic",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Catches models that avoid or over-explain enharmonic traps.",
+        "domain": "enharmonic-spelling",
+        "expected_answer": "F",
+        "expected_behavior": "Return only F.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "e-sharp-enharmonic"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 97.018,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312136, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312137, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312138, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312139, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312140, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312141, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312142, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312143, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312144, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312145, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 10,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_granite3.2-2b_010.json"
+      ],
+      "task_id": "e-sharp-enharmonic",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Catches models that avoid or over-explain enharmonic traps.",
+        "domain": "enharmonic-spelling",
+        "expected_answer": "F",
+        "expected_behavior": "Return only F.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "e-sharp-enharmonic"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F",
+          "count": 8
+        },
+        {
+          "answer": "F.",
+          "count": 3
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 3,
+      "failure_distribution": [
+        {
+          "count": 3,
+          "failure_reason": "Catches models that avoid or over-explain enharmonic traps. Expected exactly F."
+        }
+      ],
+      "latency_ms_avg": 207.624,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312136, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312137, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312138, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312139, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312140, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312141, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312142, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312143, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312144, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312145, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.7273,
+      "passed": 8,
+      "runs": 11,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_e-sharp-enharmonic_llama3.2-3b_001.json"
       ],
       "task_id": "e-sharp-enharmonic",
@@ -404,29 +1586,287 @@
     {
       "answer_distribution": [
         {
-          "answer": "Bb.",
+          "answer": "The tone that sounds like a sharp but actually belongs in another key (an accidental) and doesn't change its fundamental frequency when played on different instruments or by singers who",
+          "count": 1
+        },
+        {
+          "answer": "The tone that would be considered as having an identical sound quality (and thus being enharmonically equal) in a different key signature context than E sharp could indeed",
+          "count": 1
+        },
+        {
+          "answer": "The tone that is enharmonically equal to E sharp (E#) in a key of C major or any other tonally consistent system would be F flat",
+          "count": 1
+        },
+        {
+          "answer": "The musical interval that corresponds to an augmented second (E# - F) in equal temperament tuning can be spelled as a minor third when considering its enharmonic",
+          "count": 1
+        },
+        {
+          "answer": "The tone that is enharmonically equivalent to E sharp (E#) in a key of C major would be F flat (F\u266d). However,",
+          "count": 1
+        },
+        {
+          "answer": "The tone that would be considered enharmonically equal in terms of its position on a piano keyboard but spelled differently (E sharp instead of F flat) and having",
+          "count": 1
+        },
+        {
+          "answer": "The tone that is enharmonically equal to E sharp (E#) in a twelve-tone scale system would be F flat (F\u266d). However,",
+          "count": 1
+        },
+        {
+          "answer": "The tone that would be considered as an enharmonic equivalence for a sharped E (E#) in terms of its position on the piano keyboard and",
+          "count": 1
+        },
+        {
+          "answer": "The tone that is enharmonically equal to E sharp (E#) in a major scale would be F flat (F\u266d). However, since we",
+          "count": 1
+        },
+        {
+          "answer": "The tone that would be considered enharmonically equivalent to an E sharp (E#) in a key where sharps are used for raising notes by half steps",
           "count": 1
         }
       ],
       "batch_ids": [
-        "local-ollama-20260531-llama3.2-3b"
+        "baseline-20260531-10sample-v1"
       ],
-      "failed": 1,
+      "failed": 10,
       "failure_distribution": [
         {
-          "count": 1,
-          "failure_reason": "Checks flat-key signature recall and exact spelling. Expected exactly Bb."
+          "count": 10,
+          "failure_reason": "extra prose or multiple tokens; expected exactly F"
         }
       ],
-      "latency_ms_avg": 249.349,
-      "model": "llama3.2:3b",
+      "latency_ms_avg": 1037.091,
+      "model": "phi4-mini",
       "model_options": [
-        "{\"num_predict\": 32, \"temperature\": 0.2}"
+        "{\"num_predict\": 32, \"seed\": 5312136, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312137, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312138, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312139, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312140, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312141, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312142, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312143, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312144, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312145, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 1,
+      "runs": 10,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_e-sharp-enharmonic_phi4-mini_010.json"
+      ],
+      "task_id": "e-sharp-enharmonic",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Catches models that avoid or over-explain enharmonic traps.",
+        "domain": "enharmonic-spelling",
+        "expected_answer": "F",
+        "expected_behavior": "Return only F.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "e-sharp-enharmonic"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "Ab",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Checks flat-key signature recall and exact spelling. Expected exactly Bb."
+        }
+      ],
+      "latency_ms_avg": 308.423,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312116, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312117, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312118, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312119, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312120, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312121, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312122, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312123, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312124, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312125, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_gemma3-1b_010.json"
+      ],
+      "task_id": "f-major-key-signature",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks flat-key signature recall and exact spelling.",
+        "domain": "key-signature",
+        "expected_answer": "Bb",
+        "expected_behavior": "Return only Bb.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "f-major-key-signature"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "The single accidental in the key signature of F major is B\u266d (flat).",
+          "count": 9
+        },
+        {
+          "answer": "In the key signature of F major, there is no accidental. The key signature for F major includes one flat (\u266d) to indicate that the F",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "extra prose or multiple tokens; expected exactly Bb"
+        }
+      ],
+      "latency_ms_avg": 377.007,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312116, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312117, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312118, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312119, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312120, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312121, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312122, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312123, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312124, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312125, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_granite3.2-2b_010.json"
+      ],
+      "task_id": "f-major-key-signature",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks flat-key signature recall and exact spelling.",
+        "domain": "key-signature",
+        "expected_answer": "Bb",
+        "expected_behavior": "Return only Bb.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "f-major-key-signature"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F#",
+          "count": 8
+        },
+        {
+          "answer": "Bb.",
+          "count": 2
+        },
+        {
+          "answer": "Bb",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Checks flat-key signature recall and exact spelling. Expected exactly Bb."
+        }
+      ],
+      "latency_ms_avg": 203.3,
+      "model": "llama3.2:3b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312116, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312117, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312118, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312119, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312120, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312121, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312122, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312123, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312124, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312125, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0909,
+      "passed": 1,
+      "runs": 11,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_f-major-key-signature_llama3.2-3b_001.json"
       ],
       "task_id": "f-major-key-signature",
@@ -449,29 +1889,283 @@
     {
       "answer_distribution": [
         {
-          "answer": "Bb",
+          "answer": "B flat (Bb)",
+          "count": 2
+        },
+        {
+          "answer": "The key signature for F major contains one sharp: B\u266d (B flat). So the answer would be:\n\nB\u266d",
+          "count": 1
+        },
+        {
+          "answer": "The key signature for F major contains one flat: B\u266d. Therefore, the answer to your question would be:\n\nB\u266d\n\nThis means that every",
+          "count": 1
+        },
+        {
+          "answer": "The accidentals present as sharps (\u266f) or flats (\u266d), not naturals which are unaltered notes.\n\nIn a piece written for",
+          "count": 1
+        },
+        {
+          "answer": "The accidentals present as sharps (\u266f) and one flat (\u266d). In a C-major scale starting on D: E-F-G-A-B",
+          "count": 1
+        },
+        {
+          "answer": "The key signature for F major contains one sharp: B\u266d (B flat). So the answer would be:\n\n**B\u266d**",
+          "count": 1
+        },
+        {
+          "answer": "The accidentals present as sharps (\u266f) and one flat (\u266d). In a C-major scale starting on D: D E F G A",
+          "count": 1
+        },
+        {
+          "answer": "The key signature for F major contains one sharp: B\u266d (B flat). Therefore, the answer to your question would be:\n\n**B\u266d**",
+          "count": 1
+        },
+        {
+          "answer": "The key signature for F major contains one sharp: B\u266d (B flat).",
           "count": 1
         }
       ],
       "batch_ids": [
-        "local-ollama-20260531-llama3.2-3b"
+        "baseline-20260531-10sample-v1"
       ],
-      "failed": 1,
+      "failed": 10,
       "failure_distribution": [
         {
-          "count": 1,
+          "count": 10,
+          "failure_reason": "extra prose or multiple tokens; expected exactly Bb"
+        }
+      ],
+      "latency_ms_avg": 879.069,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312116, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312117, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312118, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312119, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312120, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312121, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312122, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312123, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312124, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312125, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_f-major-key-signature_phi4-mini_010.json"
+      ],
+      "task_id": "f-major-key-signature",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "basic",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Checks flat-key signature recall and exact spelling.",
+        "domain": "key-signature",
+        "expected_answer": "Bb",
+        "expected_behavior": "Return only Bb.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "f-major-key-signature"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "A",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
           "failure_reason": "Requires double-sharp spelling, not the easier enharmonic G. Expected exactly Fx."
         }
       ],
-      "latency_ms_avg": 233.742,
+      "latency_ms_avg": 368.325,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312146, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312147, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312148, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312149, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312150, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312151, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312152, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312153, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312154, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312155, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_gemma3-1b_010.json"
+      ],
+      "task_id": "g-sharp-minor-leading-tone",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Requires double-sharp spelling, not the easier enharmonic G.",
+        "domain": "enharmonic-spelling",
+        "expected_answer": "Fx",
+        "expected_behavior": "Return only Fx.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "g-sharp-minor-leading-tone"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "F#",
+          "count": 8
+        },
+        {
+          "answer": "F#.",
+          "count": 2
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Requires double-sharp spelling, not the easier enharmonic G. Expected exactly Fx."
+        }
+      ],
+      "latency_ms_avg": 99.351,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312146, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312147, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312148, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312149, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312150, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312151, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312152, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312153, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312154, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312155, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_granite3.2-2b_010.json"
+      ],
+      "task_id": "g-sharp-minor-leading-tone",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Requires double-sharp spelling, not the easier enharmonic G.",
+        "domain": "enharmonic-spelling",
+        "expected_answer": "Fx",
+        "expected_behavior": "Return only Fx.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "g-sharp-minor-leading-tone"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "C#",
+          "count": 5
+        },
+        {
+          "answer": "Bb",
+          "count": 4
+        },
+        {
+          "answer": "G#",
+          "count": 2
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 11,
+      "failure_distribution": [
+        {
+          "count": 11,
+          "failure_reason": "Requires double-sharp spelling, not the easier enharmonic G. Expected exactly Fx."
+        }
+      ],
+      "latency_ms_avg": 194.848,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312146, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312147, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312148, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312149, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312150, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312151, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312152, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312153, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312154, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312155, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 1,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_g-sharp-minor-leading-tone_llama3.2-3b_001.json"
       ],
       "task_id": "g-sharp-minor-leading-tone",
@@ -494,29 +2188,269 @@
     {
       "answer_distribution": [
         {
-          "answer": "3",
+          "answer": "B\u266d",
+          "count": 3
+        },
+        {
+          "answer": "A\u266d (A flat)",
+          "count": 2
+        },
+        {
+          "answer": "C sharp (C\u266f)",
+          "count": 2
+        },
+        {
+          "answer": "C#",
+          "count": 1
+        },
+        {
+          "answer": "B flat (Bb)",
+          "count": 1
+        },
+        {
+          "answer": "A\u266d (or Bb)",
           "count": 1
         }
       ],
       "batch_ids": [
-        "local-ollama-20260531-llama3.2-3b"
+        "baseline-20260531-10sample-v1"
       ],
-      "failed": 1,
+      "failed": 10,
       "failure_distribution": [
         {
-          "count": 1,
+          "count": 6,
+          "failure_reason": "extra prose or multiple tokens; expected exactly Fx"
+        },
+        {
+          "count": 4,
+          "failure_reason": "Requires double-sharp spelling, not the easier enharmonic G. Expected exactly Fx."
+        }
+      ],
+      "latency_ms_avg": 297.251,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312146, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312147, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312148, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312149, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312150, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312151, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312152, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312153, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312154, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312155, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_g-sharp-minor-leading-tone_phi4-mini_010.json"
+      ],
+      "task_id": "g-sharp-minor-leading-tone",
+      "task_metadata": {
+        "capability": "music-theory",
+        "complexity": "intermediate",
+        "contamination_risk": "common concept, original prompt wording and strict verifier",
+        "description": "Requires double-sharp spelling, not the easier enharmonic G.",
+        "domain": "enharmonic-spelling",
+        "expected_answer": "Fx",
+        "expected_behavior": "Return only Fx.",
+        "expected_failure_modes": [
+          "wrong symbolic answer",
+          "enharmonic misspelling",
+          "extra prose or multiple answers"
+        ],
+        "id": "g-sharp-minor-leading-tone"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "16\n",
+          "count": 9
+        },
+        {
+          "answer": "16",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
           "failure_reason": "Two quarter notes plus one half note equals four quarter-note units. Expected exactly 4."
         }
       ],
-      "latency_ms_avg": 254.097,
+      "latency_ms_avg": 322.843,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312066, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312067, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312068, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312069, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312070, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312071, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312072, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312073, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312074, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312075, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_gemma3-1b_010.json"
+      ],
+      "task_id": "haskell-duration-sum",
+      "task_metadata": {
+        "capability": "euterpea-stubs",
+        "complexity": "intermediate",
+        "contamination_risk": "low; original symbolic-duration prompt",
+        "domain": "symbolic-duration-reasoning",
+        "expected_answer": "4",
+        "expected_behavior": "Return only 4.",
+        "expected_failure_modes": [
+          "counts notes instead of duration",
+          "adds prose",
+          "uses fractional notation"
+        ],
+        "id": "haskell-duration-sum"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "12",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "Two quarter notes plus one half note equals four quarter-note units. Expected exactly 4."
+        }
+      ],
+      "latency_ms_avg": 106.113,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312066, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312067, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312068, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312069, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312070, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312071, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312072, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312073, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312074, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312075, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_granite3.2-2b_010.json"
+      ],
+      "task_id": "haskell-duration-sum",
+      "task_metadata": {
+        "capability": "euterpea-stubs",
+        "complexity": "intermediate",
+        "contamination_risk": "low; original symbolic-duration prompt",
+        "domain": "symbolic-duration-reasoning",
+        "expected_answer": "4",
+        "expected_behavior": "Return only 4.",
+        "expected_failure_modes": [
+          "counts notes instead of duration",
+          "adds prose",
+          "uses fractional notation"
+        ],
+        "id": "haskell-duration-sum"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "3",
+          "count": 10
+        },
+        {
+          "answer": "2",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 11,
+      "failure_distribution": [
+        {
+          "count": 11,
+          "failure_reason": "Two quarter notes plus one half note equals four quarter-note units. Expected exactly 4."
+        }
+      ],
+      "latency_ms_avg": 195.87,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312066, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312067, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312068, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312069, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312070, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312071, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312072, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312073, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312074, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312075, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 1,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_haskell-duration-sum_llama3.2-3b_001.json"
       ],
       "task_id": "haskell-duration-sum",
@@ -538,24 +2472,252 @@
     {
       "answer_distribution": [
         {
-          "answer": "{\"status\": \"ready\"}",
+          "answer": "The given sequence consists of three notes: C 4 (quarter note), D 4 (quarter note), and E 4 (half note). \n\n-",
+          "count": 3
+        },
+        {
+          "answer": "The given musical sequence consists of three notes: C 4 (quarter note), D 4 (another quarter note), and E 4 (half note).",
+          "count": 2
+        },
+        {
+          "answer": "The given sequence consists of three notes: C 4 (quarter note), D 4 (another quarter note), and E 4 (half note).\n\n-",
+          "count": 1
+        },
+        {
+          "answer": "The given musical sequence consists of three notes: C (quarter note), D (quarter note), and E (half note). We need to convert all durations into",
+          "count": 1
+        },
+        {
+          "answer": "The given musical sequence consists of three notes: C (quarter note), D (quarter note), and E (half note). \n\n- A quarter note (qn",
+          "count": 1
+        },
+        {
+          "answer": "The given musical sequence consists of three notes: C (quarter note), D (quarter note), and E (half note). \n\n- Each \"qn\" is",
+          "count": 1
+        },
+        {
+          "answer": "The given sequence has three notes: C 4 (a quarter note), D 4 (another quarter note), and E 4 (a half note).",
           "count": 1
         }
       ],
       "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "extra prose or multiple tokens; expected exactly 4"
+        }
+      ],
+      "latency_ms_avg": 1096.343,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312066, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312067, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312068, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312069, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312070, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312071, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312072, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312073, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312074, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312075, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_haskell-duration-sum_phi4-mini_010.json"
+      ],
+      "task_id": "haskell-duration-sum",
+      "task_metadata": {
+        "capability": "euterpea-stubs",
+        "complexity": "intermediate",
+        "contamination_risk": "low; original symbolic-duration prompt",
+        "domain": "symbolic-duration-reasoning",
+        "expected_answer": "4",
+        "expected_behavior": "Return only 4.",
+        "expected_failure_modes": [
+          "counts notes instead of duration",
+          "adds prose",
+          "uses fractional notation"
+        ],
+        "id": "haskell-duration-sum"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "```json\n{\n  \"status\": \"ready\"\n}\n```\n",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "answer is not valid JSON: Expecting value"
+        }
+      ],
+      "latency_ms_avg": 2380.913,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312031, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312032, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312033, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312034, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312035, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_gemma3-1b_010.json"
+      ],
+      "task_id": "json-only-status",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "basic",
+        "contamination_risk": "low; synthetic instruction-following case",
+        "domain": "structured-output",
+        "expected_answer": "{\"status\":\"ready\"}",
+        "expected_behavior": "Return exactly {\"status\":\"ready\"} as parseable JSON with no other keys.",
+        "expected_failure_modes": [
+          "markdown fence",
+          "extra keys",
+          "invalid JSON",
+          "wrong value"
+        ],
+        "id": "json-only-status"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "{\n  \"status\": \"ready\"\n}",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 403.023,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312031, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312032, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312033, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312034, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312035, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 10,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_granite3.2-2b_010.json"
+      ],
+      "task_id": "json-only-status",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "basic",
+        "contamination_risk": "low; synthetic instruction-following case",
+        "domain": "structured-output",
+        "expected_answer": "{\"status\":\"ready\"}",
+        "expected_behavior": "Return exactly {\"status\":\"ready\"} as parseable JSON with no other keys.",
+        "expected_failure_modes": [
+          "markdown fence",
+          "extra keys",
+          "invalid JSON",
+          "wrong value"
+        ],
+        "id": "json-only-status"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "{\"status\": \"ready\"}",
+          "count": 11
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
         "local-ollama-20260531-llama3.2-3b"
       ],
       "failed": 0,
       "failure_distribution": [],
-      "latency_ms_avg": 2483.669,
+      "latency_ms_avg": 773.568,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312031, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312032, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312033, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312034, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312035, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
       "pass_rate": 1.0,
-      "passed": 1,
-      "runs": 1,
+      "passed": 11,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_json-only-status_llama3.2-3b_001.json"
       ],
       "task_id": "json-only-status",
@@ -578,29 +2740,283 @@
     {
       "answer_distribution": [
         {
-          "answer": "The second letter in the word \"agent\" is 'e'.\n\n'e'e'e'",
+          "answer": "```json\n{\"status\": \"ready\"}\n```",
+          "count": 4
+        },
+        {
+          "answer": "```json\n{\n  \"status\": \"ready\"\n}\n```\n\n",
+          "count": 3
+        },
+        {
+          "answer": "```json\n{\"status\": \"ready\"}\n```\n",
+          "count": 1
+        },
+        {
+          "answer": "```json\n{\"status\": \"ready\"}\n```\n\n",
+          "count": 1
+        },
+        {
+          "answer": "```json\n{\n  \"status\": \"ready\"\n}\n```\n",
           "count": 1
         }
       ],
       "batch_ids": [
-        "local-ollama-20260531-llama3.2-3b"
+        "baseline-20260531-10sample-v1"
       ],
-      "failed": 1,
+      "failed": 10,
       "failure_distribution": [
         {
-          "count": 1,
+          "count": 10,
+          "failure_reason": "answer is not valid JSON: Expecting value"
+        }
+      ],
+      "latency_ms_avg": 792.169,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312026, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312027, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312028, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312029, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312030, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312031, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312032, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312033, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312034, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312035, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_json-only-status_phi4-mini_010.json"
+      ],
+      "task_id": "json-only-status",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "basic",
+        "contamination_risk": "low; synthetic instruction-following case",
+        "domain": "structured-output",
+        "expected_answer": "{\"status\":\"ready\"}",
+        "expected_behavior": "Return exactly {\"status\":\"ready\"} as parseable JSON with no other keys.",
+        "expected_failure_modes": [
+          "markdown fence",
+          "extra keys",
+          "invalid JSON",
+          "wrong value"
+        ],
+        "id": "json-only-status"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "AE\n",
+          "count": 6
+        },
+        {
+          "answer": "AEG\n",
+          "count": 2
+        },
+        {
+          "answer": "AE\n\n",
+          "count": 2
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "The second letter in agent is g, repeated three times. Expected exactly ggg."
+        }
+      ],
+      "latency_ms_avg": 315.132,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312046, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312047, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312048, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312049, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312050, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312051, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312052, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312053, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312054, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312055, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_gemma3-1b_010.json"
+      ],
+      "task_id": "multi-step-output",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "intermediate",
+        "contamination_risk": "low; synthetic multi-step instruction",
+        "domain": "multi-step-instruction",
+        "expected_answer": "ggg",
+        "expected_behavior": "Return only ggg.",
+        "expected_failure_modes": [
+          "answers intermediate step",
+          "uppercase drift",
+          "extra explanation",
+          "wrong repeated character"
+        ],
+        "id": "multi-step-output"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "The second letter in \"agent\" is 'g'. Repeated three times, this forms \"ggg\". So, the output is \"ggg\".",
+          "count": 7
+        },
+        {
+          "answer": "The second letter in \"agent\" is 'g'. When this letter is repeated three times, it becomes \"ggg\". So, the output is \"gg",
+          "count": 1
+        },
+        {
+          "answer": "The second letter in \"agent\" is 'g'. When this letter is repeated three times, the result is \"ggg\". So, the output is \"",
+          "count": 1
+        },
+        {
+          "answer": "The second letter in \"agent\" is 'g'. Repeated three times, this forms \"ggg\". So, my output is \"ggg\".",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
           "failure_reason": "extra prose or multiple tokens; expected exactly ggg"
         }
       ],
-      "latency_ms_avg": 590.254,
+      "latency_ms_avg": 547.061,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312046, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312047, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312048, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312049, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312050, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312051, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312052, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312053, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312054, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312055, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_granite3.2-2b_010.json"
+      ],
+      "task_id": "multi-step-output",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "intermediate",
+        "contamination_risk": "low; synthetic multi-step instruction",
+        "domain": "multi-step-instruction",
+        "expected_answer": "ggg",
+        "expected_behavior": "Return only ggg.",
+        "expected_failure_modes": [
+          "answers intermediate step",
+          "uppercase drift",
+          "extra explanation",
+          "wrong repeated character"
+        ],
+        "id": "multi-step-output"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "The second letter in the word \"agent\" is 'e'.\n\n'e'e'e'",
+          "count": 8
+        },
+        {
+          "answer": "The second letter in the word \"agent\" is 'e'. Repeating it three times gives 'eee'.",
+          "count": 2
+        },
+        {
+          "answer": "The second letter of \"agent\" is 'e'. Repeating it three times gives 'eee'.",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 11,
+      "failure_distribution": [
+        {
+          "count": 11,
+          "failure_reason": "extra prose or multiple tokens; expected exactly ggg"
+        }
+      ],
+      "latency_ms_avg": 532.387,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312046, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312047, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312048, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312049, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312050, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312051, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312052, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312053, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312054, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312055, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 1,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_multi-step-output_llama3.2-3b_001.json"
       ],
       "task_id": "multi-step-output",
@@ -623,24 +3039,234 @@
     {
       "answer_distribution": [
         {
-          "answer": "COMPLY-739",
+          "answer": "The second letter of \"agent\" is 'e'. Repeating this thrice gives us 'eee'.\n\nFinal output: eee",
+          "count": 6
+        },
+        {
+          "answer": "The second letter of \"agent\" is 'e'. Repeating this thrice, we get 'eee'.\n\nFinal output: eee",
+          "count": 2
+        },
+        {
+          "answer": "The second letter of \"agent\" is 'e', so repeating this thrice gives us 'eee'. The output as requested would be:\n\neees",
+          "count": 1
+        },
+        {
+          "answer": "The second letter of \"agent\" is 'e', so repeating this thrice we get 'eee'. The output is 'eee'.",
           "count": 1
         }
       ],
       "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "extra prose or multiple tokens; expected exactly ggg"
+        }
+      ],
+      "latency_ms_avg": 852.221,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312046, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312047, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312048, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312049, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312050, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312051, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312052, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312053, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312054, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312055, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_multi-step-output_phi4-mini_010.json"
+      ],
+      "task_id": "multi-step-output",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "intermediate",
+        "contamination_risk": "low; synthetic multi-step instruction",
+        "domain": "multi-step-instruction",
+        "expected_answer": "ggg",
+        "expected_behavior": "Return only ggg.",
+        "expected_failure_modes": [
+          "answers intermediate step",
+          "uppercase drift",
+          "extra explanation",
+          "wrong repeated character"
+        ],
+        "id": "multi-step-output"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "COMPLY-739\n",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 401.038,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312036, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312037, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312038, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312039, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312040, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312041, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312042, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312043, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312044, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312045, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 10,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_gemma3-1b_010.json"
+      ],
+      "task_id": "output-only-token",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "basic",
+        "contamination_risk": "low; arbitrary token generated for this benchmark",
+        "domain": "output-constraint",
+        "expected_answer": "COMPLY-739",
+        "expected_behavior": "Return only COMPLY-739.",
+        "expected_failure_modes": [
+          "extra prose",
+          "missing hyphen",
+          "quote wrapping"
+        ],
+        "id": "output-only-token"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "COMPLY-739",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 159.203,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312036, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312037, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312038, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312039, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312040, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312041, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312042, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312043, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312044, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312045, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 10,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_granite3.2-2b_010.json"
+      ],
+      "task_id": "output-only-token",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "basic",
+        "contamination_risk": "low; arbitrary token generated for this benchmark",
+        "domain": "output-constraint",
+        "expected_answer": "COMPLY-739",
+        "expected_behavior": "Return only COMPLY-739.",
+        "expected_failure_modes": [
+          "extra prose",
+          "missing hyphen",
+          "quote wrapping"
+        ],
+        "id": "output-only-token"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "COMPLY-739",
+          "count": 11
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
         "local-ollama-20260531-llama3.2-3b"
       ],
       "failed": 0,
       "failure_distribution": [],
-      "latency_ms_avg": 281.329,
+      "latency_ms_avg": 249.712,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312036, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312037, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312038, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312039, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312040, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312041, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312042, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312043, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312044, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312045, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
       "pass_rate": 1.0,
-      "passed": 1,
-      "runs": 1,
+      "passed": 11,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_output-only-token_llama3.2-3b_001.json"
       ],
       "task_id": "output-only-token",
@@ -662,30 +3288,378 @@
     {
       "answer_distribution": [
         {
-          "answer": "To transpose the notes up a major second, we need to find the note that is two semitones above each of the original pitches.\n\nC 4 becomes",
+          "answer": "COMPLY-739",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 0,
+      "failure_distribution": [],
+      "latency_ms_avg": 269.368,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312036, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312037, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312038, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312039, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312040, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312041, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312042, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312043, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312044, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312045, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 1.0,
+      "passed": 10,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_output-only-token_phi4-mini_010.json"
+      ],
+      "task_id": "output-only-token",
+      "task_metadata": {
+        "capability": "agent-compliance",
+        "complexity": "basic",
+        "contamination_risk": "low; arbitrary token generated for this benchmark",
+        "domain": "output-constraint",
+        "expected_answer": "COMPLY-739",
+        "expected_behavior": "Return only COMPLY-739.",
+        "expected_failure_modes": [
+          "extra prose",
+          "missing hyphen",
+          "quote wrapping"
+        ],
+        "id": "output-only-token"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "C4, D4, E4, F4, G4, A4, B4, C5",
+          "count": 10
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "extra prose or multiple tokens; expected exactly D4,F#4,A4"
+        }
+      ],
+      "latency_ms_avg": 624.849,
+      "model": "gemma3:1b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312056, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312057, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312058, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312059, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312060, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312061, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312062, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312063, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312064, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312065, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_gemma3-1b_010.json"
+      ],
+      "task_id": "transpose-line",
+      "task_metadata": {
+        "capability": "euterpea-stubs",
+        "complexity": "basic",
+        "contamination_risk": "low; original Euterpea-style expression",
+        "domain": "symbolic-music-representation",
+        "expected_answer": "D4,F#4,A4",
+        "expected_behavior": "Return only D4,F#4,A4.",
+        "expected_failure_modes": [
+          "misses accidental",
+          "drops octaves",
+          "returns code instead of result"
+        ],
+        "id": "transpose-line"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "The pitches resulting from transposing the given notes (C, E, and G) up a major second are: C3, D3, and F",
+          "count": 2
+        },
+        {
+          "answer": "C 5, D 6, E 7, G 8\n\nExplanation: In music theory, when you transpose a note up by one half",
+          "count": 1
+        },
+        {
+          "answer": "The pitches resulting from transposing the given notes up a major second would be: C3, D#4, E4, F#4, G",
+          "count": 1
+        },
+        {
+          "answer": "C 5, D 5, E 6, F 7, G 8\n\nThe original notes are C (4), E (4",
+          "count": 1
+        },
+        {
+          "answer": "The pitches resulting from transposing the given notes up a major second would be: C3, D3 (which is equivalent to E4 in this context",
+          "count": 1
+        },
+        {
+          "answer": "C 5, D 5, E 6, F 7, G 8\n\nIn the given expression lineToMusic [C 4",
+          "count": 1
+        },
+        {
+          "answer": "The pitches resulting from transposing the given notes (C, E, G) up a major second would be: C3, D4, F#",
+          "count": 1
+        },
+        {
+          "answer": "C 5, D 5, E 6, F 7, G 8, A 9, B 10\n\nExplanation:",
+          "count": 1
+        },
+        {
+          "answer": "The pitches resulting from transposing the given notes (C, E, and G) up a major second are: C#5, D#5,",
           "count": 1
         }
       ],
       "batch_ids": [
-        "local-ollama-20260531-llama3.2-3b"
+        "baseline-20260531-10sample-v1"
       ],
-      "failed": 1,
+      "failed": 10,
       "failure_distribution": [
         {
-          "count": 1,
+          "count": 10,
           "failure_reason": "extra prose or multiple tokens; expected exactly D4,F#4,A4"
         }
       ],
-      "latency_ms_avg": 1305.931,
+      "latency_ms_avg": 572.106,
+      "model": "granite3.2:2b",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312056, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312057, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312058, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312059, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312060, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312061, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312062, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312063, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312064, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312065, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_granite3.2-2b_010.json"
+      ],
+      "task_id": "transpose-line",
+      "task_metadata": {
+        "capability": "euterpea-stubs",
+        "complexity": "basic",
+        "contamination_risk": "low; original Euterpea-style expression",
+        "domain": "symbolic-music-representation",
+        "expected_answer": "D4,F#4,A4",
+        "expected_behavior": "Return only D4,F#4,A4.",
+        "expected_failure_modes": [
+          "misses accidental",
+          "drops octaves",
+          "returns code instead of result"
+        ],
+        "id": "transpose-line"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "To transpose the notes up a major second, we need to find the note that is one semitone above each of the original pitches.\n\nC 4 becomes D",
+          "count": 2
+        },
+        {
+          "answer": "To transpose the notes up a major second, we need to find the note that is two semitones above each of the original pitches.\n\nC 4 becomes",
+          "count": 2
+        },
+        {
+          "answer": "To transpose the notes up a major second, we need to find the next note in the major scale.\n\nC 4 -> D 4\nE 4",
+          "count": 1
+        },
+        {
+          "answer": "To transpose the pitches up a major second, we need to find the note that is one semitone above each of the original notes.\n\nC 4 becomes D",
+          "count": 1
+        },
+        {
+          "answer": "To transpose the pitches up a major second, we need to find the notes that are two semitones above C.\n\nC -> D (1 semitone)\n",
+          "count": 1
+        },
+        {
+          "answer": "To find the new pitch names after transposing up a major second, we need to add the interval of a major second (3 semitones) to each",
+          "count": 1
+        },
+        {
+          "answer": "To transpose the pitches up a major second, we need to find the next note in the major scale.\n\nC 4 -> D 4\nE 4",
+          "count": 1
+        },
+        {
+          "answer": "To transpose the pitches up a major second, we need to find the notes that are two semitones above C4.\n\nC4 + 2 semit",
+          "count": 1
+        },
+        {
+          "answer": "To transpose the notes up a major second, you can use the following formula:\n\nnewPitch = oldPitch + 2 semitones\n\nHere are the results",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1",
+        "local-ollama-20260531-llama3.2-3b"
+      ],
+      "failed": 11,
+      "failure_distribution": [
+        {
+          "count": 11,
+          "failure_reason": "extra prose or multiple tokens; expected exactly D4,F#4,A4"
+        }
+      ],
+      "latency_ms_avg": 854.492,
       "model": "llama3.2:3b",
       "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312056, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312057, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312058, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312059, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312060, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312061, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312062, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312063, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312064, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312065, \"temperature\": 0.2}",
         "{\"num_predict\": 32, \"temperature\": 0.2}"
       ],
       "pass_rate": 0.0,
       "passed": 0,
-      "runs": 1,
+      "runs": 11,
       "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_001.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_002.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_003.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_004.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_005.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_006.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_007.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_008.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_009.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_llama3.2-3b_010.json",
         "data/runs/local-ollama-20260531-llama3.2-3b_transpose-line_llama3.2-3b_001.json"
+      ],
+      "task_id": "transpose-line",
+      "task_metadata": {
+        "capability": "euterpea-stubs",
+        "complexity": "basic",
+        "contamination_risk": "low; original Euterpea-style expression",
+        "domain": "symbolic-music-representation",
+        "expected_answer": "D4,F#4,A4",
+        "expected_behavior": "Return only D4,F#4,A4.",
+        "expected_failure_modes": [
+          "misses accidental",
+          "drops octaves",
+          "returns code instead of result"
+        ],
+        "id": "transpose-line"
+      }
+    },
+    {
+      "answer_distribution": [
+        {
+          "answer": "D 5 qn, F# 5 qn, A 5 qn",
+          "count": 4
+        },
+        {
+          "answer": "The original pitches are C 4 (quarter note), E 4 (quarter note), and G 4 (quarter note). Transposing them up by one",
+          "count": 2
+        },
+        {
+          "answer": "The original pitches are C 4 (quarter-note), E 4 (quarter-note), and G 4 (quarter-note). Transposing these notes up by",
+          "count": 1
+        },
+        {
+          "answer": "The original pitches are C 4 (quarter note), E 4 (quarter note), and G 4 (quarter note). Transposing them all upwards by",
+          "count": 1
+        },
+        {
+          "answer": "The original pitches are C 4 (quarter note), E 4 (quarter note), and G 4 (quarter note). Transposing these notes up by",
+          "count": 1
+        },
+        {
+          "answer": "The original notes are C 4, E 4, and G 4.\n\nTransposing them up by one semitone (a major second) results in",
+          "count": 1
+        }
+      ],
+      "batch_ids": [
+        "baseline-20260531-10sample-v1"
+      ],
+      "failed": 10,
+      "failure_distribution": [
+        {
+          "count": 10,
+          "failure_reason": "extra prose or multiple tokens; expected exactly D4,F#4,A4"
+        }
+      ],
+      "latency_ms_avg": 914.224,
+      "model": "phi4-mini",
+      "model_options": [
+        "{\"num_predict\": 32, \"seed\": 5312056, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312057, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312058, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312059, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312060, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312061, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312062, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312063, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312064, \"temperature\": 0.2}",
+        "{\"num_predict\": 32, \"seed\": 5312065, \"temperature\": 0.2}"
+      ],
+      "pass_rate": 0.0,
+      "passed": 0,
+      "runs": 10,
+      "source_files": [
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_001.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_002.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_003.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_004.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_005.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_006.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_007.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_008.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_009.json",
+        "data/runs/baseline-20260531-10sample-v1_transpose-line_phi4-mini_010.json"
       ],
       "task_id": "transpose-line",
       "task_metadata": {
@@ -705,5 +3679,5 @@
     }
   ],
   "schema_version": 1,
-  "source_run_count": 33
+  "source_run_count": 553
 }

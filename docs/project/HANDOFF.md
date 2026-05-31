@@ -27,9 +27,9 @@ Do not optimize prompts to raise weak-model scores. Do not frame this as prompt 
 - Public remote: `https://github.com/shahzebqazi/benchmark-euterpea`.
 - Agent work should happen on `feature/pre-push-ready`; do not work directly on `main`.
 - Remote publication is intentionally blocked until the user says the application is complete and asks to push.
-- The current curated report includes four model names, but only `llama3.2:3b` covers the full executable suite.
-- Local Ollama is blocked in the pre-push environment: `ollama list` fails with `mkdir /Users/sqazi/.ollama/models: file exists: ensure path elements are traversable`.
-- Because Ollama is blocked, the current public evidence should be described as an honest curated snapshot, not a complete four-model baseline.
+- The current curated report is a full 4-model x 13-task x 10-sample baseline.
+- Local Ollama weights live at `~/Git/Config/my-ai-models/ollama/models` (`~/.ollama/models` symlinks there). Playbook repo: `~/Git/configuration/my-ai-models/`.
+- Current report/site should be described as a reproducible local baseline, still modest in task breadth.
 - Do not touch `/Users/sqazi/Git/Personal/social/linkedin`; another agent owns application materials.
 
 ## Implemented Platform Artifacts
@@ -66,14 +66,14 @@ Current task breadth:
 
 Report: `data/reports/latest.json`.
 
-Source run count: 33 schema-versioned raw runs.
+Source run count: 520 schema-versioned raw runs from batch `baseline-20260531-10sample-v1`.
 
 Model coverage:
 
-- `llama3.2:3b`: 13 tasks covered, 4/18 samples passed.
-- `gemma3:1b`: 1 task covered, 5/5 samples passed.
-- `granite3.2:2b`: 1 task covered, 0/5 samples passed.
-- `phi4-mini`: 1 task covered, 5/5 samples passed.
+- `llama3.2:3b`: 13 tasks covered, 41/130 samples passed.
+- `gemma3:1b`: 13 tasks covered, 30/130 samples passed.
+- `granite3.2:2b`: 13 tasks covered, 30/130 samples passed.
+- `phi4-mini`: 13 tasks covered, 30/130 samples passed.
 
 Notable failures:
 
@@ -83,11 +83,12 @@ Notable failures:
 - `multi-step-output`: added prose and repeated the wrong letter.
 - `transpose-line`: explained instead of outputting only `D4,F#4,A4`.
 
-Required next baseline, once Ollama works:
+Required next benchmark work:
 
-- Run `llama3.2:3b`, `granite3.2:2b`, `gemma3:1b`, and `phi4-mini` across the full executable suite with 5 samples each.
-- Regenerate `data/reports/latest.json` and `docs/site/dist/`.
-- Keep any missing model/task coverage documented rather than fabricating raw runs.
+- Add more tasks. User target: minimum 10 deterministic tasks per approved benchmark section.
+- Keep the current 10-sample repeat policy for accuracy estimates.
+- Multi-model runner now exists at `scripts/run_matrix.py`; use it for smoke/full local matrix reruns.
+- Preserve reproducibility details in issues when external users or agents run individual models.
 
 
 ## Branch, PR, And Review Governance
@@ -114,13 +115,44 @@ Human prompts/approval are required before changing verifier acceptance behavior
 
 ## UX/UI Agent Status
 
-The UX/UI agent has already reworked `scripts/build_site.py` significantly. The site now has a paper/report-style visual direction: editorial hero, abstract, contribution sections, pipeline diagram, result snapshot cards, pass-rate bars, answer/failure distribution bars, task catalog grouped by capability, methodology page, and review workflow page.
+The UX/UI agent has already reworked `scripts/build_site.py` significantly. The site now has a paper/report-style visual direction: editorial hero, abstract, contribution sections, pipeline diagram, result snapshot cards, pass-rate bars, section-level technical evidence summaries, task catalog grouped by benchmark section, methodology page, review workflow page, references page, and reproducible-run guidance.
 
-Current quality is improved from the original and user feedback is positive. The site supports model comparison, task/model matrix cells, failure distributions, answer summaries, and provenance rows, but it still needs a full matrix run before the report can be described as complete:
+Current quality is improved from the original and user feedback is positive. The site supports model comparison, a horizontally scrollable task/model matrix sized around four visible model columns, expandable technical evidence list items by benchmark section, compact provenance summaries, references, and a clone-and-run contribution path. Raw answer distributions, source paths, model options, and full provenance should remain in `data/reports/latest.json`, not pushed into public page tables.
 
-- Current report has partial coverage for three models, so cross-model comparisons must show uncovered task cells.
-- A full 4-model x 5-sample matrix is still the top evidence gap.
-- Failure/provenance rows are present, but richer failure-corpus promotion remains future work.
+Recent user-directed site changes:
+
+- Move/merge the current evidence section into the Results Snapshot page.
+- Merge Coverage and Limitations into a centered homepage section.
+- Add a References page and footer links.
+- Redo footer around reproducibility and contribution.
+- Keep task catalog centered on approved benchmark sections.
+- Show task expansion target: minimum 10 tasks per section.
+- Replace raw failure/answer/provenance tables with section-level technical summaries and compact charts.
+- Rename the results evidence heading to avoid "section" in the title: "Evidence by benchmark."
+- Make evidence summaries expandable list items with nerd-style icons per benchmark section.
+- Make the score matrix horizontally scrollable for additional models and remove section-summary rows from that matrix.
+- Reformat the methodology page toward a formal CS paper methodology section, including Datacurve-aligned review criteria.
+- Rebuild the methodology page using `https://deepswe.datacurve.ai/blog#methodology` as the spec. Mirror the structure, adapted to this repo: "Repository/domain selection" instead of repository selection; "Task construction"; "Quality assurance"; "Evaluation harness"; and "Harness limitations / future native-harness comparison." The page should explicitly cover prompt/verifier artifacts, behavioral verification, verifier flakiness checks, regression/negative fixtures, human review, multiple-model diagnostic rollouts, and the current local Ollama harness boundary.
+
+Remaining UI/site follow-up:
+
+- Review generated pages in browser after any copy/layout changes.
+- Consider splitting `scripts/build_site.py` if further UI growth makes it hard to maintain.
+- Richer failure-corpus promotion remains future work; the public site should summarize evidence while preserving raw audit data in JSON artifacts.
+- Add DeepSWE-style interactive result graphs. The current site does not yet match the two primary graph patterns on `https://deepswe.datacurve.ai/`: score plotted against cost/time/output-token efficiency and a leaderboard-style model comparison with date, model count, best/all effort-level controls, and per-model pass rate, average cost, average time, and output-token metrics.
+- For this repo, graph controls should map to available benchmark data rather than inventing missing fields. Current raw reports have latency and Ollama token/timing metrics when present, but not monetary cost or effort-level metadata. Add placeholders or disabled controls only if clearly labeled as unavailable.
+- Rebuild the matrix/data experience using `https://deepswe.datacurve.ai/data` and `https://deepswe.datacurve.ai/data/trials` as the product spec. The Results Snapshot should grow into a data-browser page with tabs for Heatmap, Tasks, and Trials:
+  - Heatmap: task x model-effort grid, pivot control for tasks/model efforts, source selector, model grouping control, all/exclude errored/only passed filters, display as numbers or color-only, and color-by controls such as pass rate, average latency/duration, token counts, trials, and errors.
+  - Tasks: searchable task catalog with language/domain/section filters, task cards, stable task URLs, and compact task descriptions. For this repo, filters should use benchmark section, capability, complexity, and domain instead of programming language/repository.
+  - Trials: searchable table of individual run records with outcome, model, task, latency/duration, token/timing metrics where available, batch id, and error state. Do not dump raw answers by default; expose raw-answer detail only behind an intentional drill-down if needed for audit.
+  - Preserve the current public-site principle: summarize evidence visually while keeping full raw/provenance details in JSON artifacts.
+- Methodology rewrite details from DeepSWE spec:
+  - Repository/domain selection: explain why music theory, agent compliance, and Euterpea-style symbolic tasks are the controlled domain slice; note that true repo-level coding tasks are future work.
+  - Task construction: every task ships model-facing prompt, executable verifier, and metadata/reference expected behavior; verifiers test observable behavior rather than implementation style.
+  - Reliability checks: verifier import/contract validation, expected-answer pass check, prompt leakage checks, negative fixtures, and future repeated/flakiness checks.
+  - Quality assurance: prompt-verifier bijection, acceptance breadth, realism, and environment cleanliness; tasks below this bar should return for revision.
+  - Evaluation harness: local/Ollama `run_task.py` and `run_batch.py` are held fixed across models so comparisons reflect model behavior rather than per-model scaffolding.
+  - Limitations: current harness grades single text responses, not long-horizon repo edits; future work should add artifact/patch execution before claiming DeepSWE-style coding-agent coverage.
 
 When checking UX/UI work, inspect generated pages in browser, not only the source. The local site should be rebuilt with:
 
@@ -161,7 +193,7 @@ Audit scope:
 4. Raw/derived data
    - Confirm raw run schema matches `ARCHITECTURE.md`.
    - Confirm derived report schema includes source files, batch ids, model options, answer distribution, failure distribution, and task metadata.
-   - Add report-level totals by model and capability, not only task/model rows.
+   - Add report-level totals by model and benchmark section, not only task/model rows.
    - Add model/task matrix data to `latest.json` or compute it in the site generator.
 
 5. Site generation
@@ -186,18 +218,47 @@ Audit scope:
 - `run_batch.py` increments `failures` for any nonzero `run_task.py`; currently benchmark failures and harness failures are conflated at batch level.
 - `run_task.py` returns `1` for benchmark failures and `2` for harness/runtime errors, but `run_batch.py` collapses both to one failure count.
 - `scripts/build_site.py` is a single large generated-site script; maintainability will degrade as visual/report complexity grows.
-- Current report has four model names but only one full-suite model baseline. This is now the top reporting gap.
+- Full-suite model baseline now exists, but section breadth is weak. Each approved benchmark section needs at least 10 deterministic tasks.
 - Verifier validation includes initial negative fixtures for two tasks; broaden fixture coverage across all task families.
 - Punctuation failures such as `F.` vs `F` are currently strict; that is defensible for exact-output tasks, but the policy should be explicit per task family.
 - `data/runs` may be git-ignored while report `source_files` point to paths that will not exist in public clone if raw runs are not committed; decide whether selected curated raw runs should be committed or reports should embed enough provenance without relying on those files.
 
+## External Run And Issue Workflow
+
+Users and agents should be able to clone the repo, run one model locally, and open an issue with enough detail for maintainers or repo agents to recreate the result.
+
+Documented workflow:
+
+```bash
+git clone https://github.com/shahzebqazi/benchmark-euterpea.git
+cd benchmark-euterpea
+git rev-parse HEAD
+ollama pull <model>
+python3 scripts/run_batch.py --model <model> --repeat 10 --batch-id external-<model>-<date> --temperature 0.2 --num-predict 32
+python3 scripts/summarize_runs.py --batch-id external-<model>-<date>
+python3 scripts/build_site.py
+```
+
+Issue must include:
+
+- commit SHA;
+- model name and Ollama version;
+- batch id;
+- repeat count and generation options;
+- exact reproduction commands;
+- pass-rate summary by section/task;
+- notable failures with observed answer and verifier reason;
+- whether the finding suggests a new task, verifier fixture, ambiguity fix, or failure-corpus entry.
+
+The issue template `.github/ISSUE_TEMPLATE/model-failure.yml` has been expanded for this.
+
 ## Multi-Model Ollama Plan
 
-The user explicitly wants benchmarks for all available local Ollama models, not just `llama3.2:3b`. This is the next major benchmark/reporting requirement.
+The first full local matrix has been run. Keep this plan for future reruns and for building a dedicated matrix runner.
 
 Short-term implementation:
 
-1. Add `scripts/run_matrix.py` or extend `scripts/run_batch.py` with repeated `--model` arguments. Prefer `run_matrix.py` if it keeps single-model batch semantics clean.
+1. Use `scripts/run_matrix.py` to keep single-model batch semantics clean while coordinating repeated `--model` runs.
 2. Run all currently installed local Ollama models: `llama3.2:3b`, `phi4-mini:latest`, `gemma3:1b`, and `granite3.2:2b`.
 3. For each model, run all discovered tasks with the same batch id, sample count, temperature, `num_predict`, and optional seed.
 4. Use a batch id convention like:
@@ -218,10 +279,10 @@ python3 scripts/build_site.py
 Potential command design:
 
 ```bash
-python3 scripts/run_matrix.py   --model llama3.2:3b   --model phi4-mini:latest   --model gemma3:1b   --model granite3.2:2b   --repeat 3   --batch-id local-ollama-20260531-matrix-v1   --temperature 0.2   --num-predict 32
+python3 scripts/run_matrix.py   --model llama3.2:3b   --model phi4-mini:latest   --model gemma3:1b   --model granite3.2:2b   --repeat 10   --batch-id local-ollama-20260531-matrix-v1   --temperature 0.2   --num-predict 32
 ```
 
-Do not run very large repeats without checking runtime and disk churn. Start with `--repeat 1` across all four models for smoke. Then run `--repeat 3` or `--repeat 5` after report/site behavior is confirmed.
+Do not run very large repeats without checking runtime and disk churn. Start with `--repeat 1` across all four models for smoke. Then run the default `--repeat 10` after report/site behavior is confirmed.
 
 After the first matrix run, update `data/reports/latest.json` and the generated site so the public report answers:
 
@@ -233,12 +294,12 @@ After the first matrix run, update `data/reports/latest.json` and the generated 
 
 ## Development Priorities
 
-1. Fix local Ollama availability or run the baseline on a machine where the four target models are available.
-2. Run the full 4-model x 5-sample suite and regenerate report/site.
-3. Add a multi-model matrix runner if shell loops become too brittle.
-4. Broaden verifier fixtures beyond the first two task contracts.
-5. Repo-wide audit and bug fixes, especially batch exit semantics and report/source provenance.
-6. Add AGENTIC-aligned docs only after benchmark infra remains coherent.
+1. Generate more benchmark tasks until every approved section has at least 10 tasks.
+2. Add a multi-model matrix runner if shell loops become too brittle.
+3. Broaden verifier fixtures beyond the first two task contracts.
+4. Repo-wide audit and bug fixes, especially batch exit semantics and report/source provenance.
+5. Add AGENTIC-aligned docs only after benchmark infra remains coherent.
+6. Re-run the 4-model x 10-sample baseline after task expansion.
 
 ## Validation Commands
 

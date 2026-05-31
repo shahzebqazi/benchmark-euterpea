@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only F#.",
+  "domain": "multi-step-instruction",
+  "expected_answer": "F#",
+  "expected_behavior": "Return only F#.",
+  "expected_failure_modes": [
+    "includes reasoning",
+    "wrong scale degree",
+    "enharmonic misspelling"
+  ],
+  "id": "music-final-only"
+}

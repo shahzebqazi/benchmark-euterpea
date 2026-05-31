@@ -1,0 +1,15 @@
+{
+  "capability": "euterpea-stubs",
+  "complexity": "basic",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only D4.",
+  "domain": "euterpea-pitch",
+  "expected_answer": "D4",
+  "expected_behavior": "Return only D4.",
+  "expected_failure_modes": [
+    "returns code",
+    "wrong octave",
+    "extra prose"
+  ],
+  "id": "euterpea-trans-pitch"
+}

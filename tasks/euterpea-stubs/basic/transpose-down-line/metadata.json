@@ -1,0 +1,15 @@
+{
+  "capability": "euterpea-stubs",
+  "complexity": "basic",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only A3,C#4,E4.",
+  "domain": "symbolic-music-representation",
+  "expected_answer": "A3,C#4,E4",
+  "expected_behavior": "Return only A3,C#4,E4.",
+  "expected_failure_modes": [
+    "misses accidentals",
+    "drops octaves",
+    "returns code instead of result"
+  ],
+  "id": "transpose-down-line"
+}

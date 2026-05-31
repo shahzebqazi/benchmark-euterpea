@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only B,D,F.",
+  "domain": "chord-spelling",
+  "expected_answer": "B,D,F",
+  "expected_behavior": "Return only B,D,F.",
+  "expected_failure_modes": [
+    "wrong chord quality",
+    "delimiter error",
+    "extra prose"
+  ],
+  "id": "b-diminished-triad-spelling"
+}

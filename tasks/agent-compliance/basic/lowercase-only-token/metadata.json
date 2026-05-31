@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "basic",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only ready.",
+  "domain": "output-constraint",
+  "expected_answer": "ready",
+  "expected_behavior": "Return only ready.",
+  "expected_failure_modes": [
+    "case mismatch",
+    "punctuation",
+    "extra prose"
+  ],
+  "id": "lowercase-only-token"
+}

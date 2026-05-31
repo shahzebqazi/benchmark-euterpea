@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only yes.",
+  "domain": "meter-fit",
+  "expected_answer": "yes",
+  "expected_behavior": "Return only yes.",
+  "expected_failure_modes": [
+    "wrong meter fit",
+    "adds explanation",
+    "wrong casing"
+  ],
+  "id": "three-four-bar-fit"
+}

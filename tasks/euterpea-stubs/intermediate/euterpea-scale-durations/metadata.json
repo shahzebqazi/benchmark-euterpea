@@ -1,0 +1,15 @@
+{
+  "capability": "euterpea-stubs",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only 1,2.",
+  "domain": "euterpea-duration",
+  "expected_answer": "1,2",
+  "expected_behavior": "Return only 1,2.",
+  "expected_failure_modes": [
+    "wrong duration scaling",
+    "uses fractions",
+    "extra prose"
+  ],
+  "id": "euterpea-scale-durations"
+}

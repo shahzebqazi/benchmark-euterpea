@@ -17,4 +17,4 @@ This file maps external application claims to repository proof. It is repo evide
 
 ## Current Evidence Boundary
 
-The current curated report includes four model names, but only `llama3.2:3b` covers the full 13-task executable suite. `gemma3:1b`, `granite3.2:2b`, and `phi4-mini` currently cover `c-major-fifth` only. Local Ollama is blocked in this environment, so any external claim should say "curated snapshot" and avoid implying a complete four-model full-suite baseline until the operator runs the optional matrix in `docs/agentic/PRE_PUSH_CHECKLIST.md`.
+The current curated report includes a full 4-model x 13-task x 10-sample local baseline. External claims should still say "curated snapshot" rather than "leaderboard" because task breadth is intentionally modest and each approved benchmark section still needs at least 10 deterministic tasks.

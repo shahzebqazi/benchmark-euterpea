@@ -52,6 +52,49 @@ The verifier grades observable behavior, not intent or prose quality. It may nor
 
 Expected answers live in metadata and verifier code, not prompts. This makes prompt leakage detectable and keeps task correctness auditable.
 
+## Algebraic Task Model
+
+The next task generation layer should make complex tasks algebraic internally even when model-facing prompts stay short. Human-written verifiers should compare canonical structures, not brittle prose, by parsing outputs into small algebraic data types.
+
+Good verifier targets are domain values such as:
+
+```text
+Pitch      = NoteName + Accidental + Octave?
+Interval   = Quality + Number
+Key        = Tonic + Mode
+Duration   = Whole | Half | Quarter | Eighth | Dotted Duration | Sum [Duration]
+Melody     = [Pitch]
+Transform  = Transpose Interval | Invert Pitch | Retrograde
+Judgement  = Accepted CanonicalValue | Rejected FailureReason
+```
+
+In Python, these can start as `dataclass` / `Enum` / `typing.Literal` structures in verifier helpers. In later Haskell/Euterpea tasks, the same contracts can become true ADTs with parsers, pretty-printers, and property tests.
+
+This lets the benchmark grow beyond one-token answers:
+
+- **Category theory:** test compositional laws such as identity transposition, associativity of interval composition, functor-like mapping over a melody, and equivalence between composed transforms and their normalized form.
+- **Lazy evaluation:** ask models to reason about finite prefixes of generated musical streams, repeated motifs, or transformations that should not require expanding an infinite sequence.
+- **Generative AI:** ask models to emit constrained symbolic structures, then verify invariants such as key membership, duration total, motif preservation, or transformation correctness.
+
+The verifier remains human written. Generative behavior is accepted only when it satisfies explicit algebraic invariants; it should not be graded by taste.
+
+## Section Breadth Target
+
+Public reporting groups tasks into benchmark sections rather than treating each task as a top-level category. Each approved section should contain at least 10 deterministic task contracts before section-level claims are treated as mature:
+
+- Music Theory Recognition
+- Tonal Spelling & Enharmonics
+- Rhythm & Duration Reasoning
+- Symbolic Transformation
+- Symbolic Music / Euterpea
+- Instruction / Output Compliance
+- Structured Output Fidelity
+- Multi-Step Constraint Following
+- Representation Translation
+- Verifier Robustness / Ambiguity Cases
+
+New task proposals should identify the target section, the algebraic structure being tested, the expected verifier invariant, and contamination risk. If a task does not fit one of these sections, pause and revise the taxonomy before adding it.
+
 ## Raw Run JSON Schema
 
 Each raw run is one model response. Current schema version: `1`.
@@ -77,6 +120,20 @@ Important fields:
 - `ollama_metrics`
 
 Raw runs are source data. They are allowed to include awkward or failed model behavior because that behavior is the evidence.
+
+## Repeated Sampling And Accuracy
+
+Benchmark accuracy is estimated from repeated samples, not a single model response. `run_task.py` and `run_batch.py` default to 10 samples per task/model. Use `--repeat 1` for smoke checks only.
+
+Every sample writes a separate immutable raw run with its own `sample_index`, timestamp, latency, answer, verifier decision, and failure reason. The derived report groups those samples by `(task_id, model)` and reports:
+
+- `runs`: number of samples collected;
+- `passed` / `failed`: deterministic verifier outcomes;
+- `pass_rate`: the task/model accuracy estimate;
+- `answer_distribution`: stability or drift across samples;
+- `failure_distribution`: recurring failure classes.
+
+For public comparisons, every model in a report should use the same task set, repeat count, temperature, token limit, and seed policy. Partial coverage is allowed only when it is explicitly labeled as a curated snapshot.
 
 ## Derived Report Schema
 

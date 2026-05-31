@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only C,E,G.",
+  "domain": "representation-translation",
+  "expected_answer": "C,E,G",
+  "expected_behavior": "Return only C,E,G.",
+  "expected_failure_modes": [
+    "wrong chord spelling",
+    "returns JSON",
+    "extra prose"
+  ],
+  "id": "json-to-compact-chord"
+}

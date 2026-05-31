@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "basic",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only 1.",
+  "domain": "interval-recognition",
+  "expected_answer": "1",
+  "expected_behavior": "Return only 1.",
+  "expected_failure_modes": [
+    "wrong semitone count",
+    "names interval instead of count",
+    "extra prose"
+  ],
+  "id": "minor-second-semitones"
+}

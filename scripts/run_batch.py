@@ -12,15 +12,22 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TASK_ROOT = REPO_ROOT / "tasks"
+DEFAULT_REPEAT = 10
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run every discovered benchmark task, or a filtered subset.")
     parser.add_argument("--model", required=True, help="Ollama model name, such as llama3.2:3b.")
     parser.add_argument("--task-root", type=Path, default=DEFAULT_TASK_ROOT)
-    parser.add_argument("--repeat", type=int, default=1)
+    parser.add_argument("--repeat", type=int, default=DEFAULT_REPEAT, help="Samples per task. Defaults to 10 for accuracy estimates.")
     parser.add_argument("--batch-id", help="Batch id shared by all task runs.")
     parser.add_argument("--capability", help="Only run tasks under this capability directory.")
+    parser.add_argument("--ollama-url", help="Ollama base URL to pass to run_task.py.")
+    parser.add_argument(
+        "--ollama-api-key-env",
+        default="OLLAMA_API_KEY",
+        help="Environment variable containing an Ollama API key for authenticated hosts.",
+    )
     parser.add_argument("--temperature", type=float, default=0.2)
     parser.add_argument("--num-predict", type=int, default=32)
     parser.add_argument("--seed", type=int)
@@ -58,7 +65,10 @@ def main() -> int:
             "--batch-id", batch_id,
             "--temperature", str(args.temperature),
             "--num-predict", str(args.num_predict),
+            "--ollama-api-key-env", args.ollama_api_key_env,
         ]
+        if args.ollama_url is not None:
+            cmd.extend(["--ollama-url", args.ollama_url])
         if args.seed is not None:
             cmd.extend(["--seed", str(args.seed + index * args.repeat)])
         completed = subprocess.run(cmd, cwd=REPO_ROOT, check=False)

@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only strict.",
+  "domain": "output-constraint",
+  "expected_answer": "strict",
+  "expected_behavior": "Return only strict.",
+  "expected_failure_modes": [
+    "wrong strictness policy",
+    "extra prose",
+    "case mismatch"
+  ],
+  "id": "punctuation-strictness-label"
+}

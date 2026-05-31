@@ -19,4 +19,4 @@ Build the static hiscore site:
 python3 scripts/build_site.py
 ```
 
-Reports include model/task pass rates, answer distributions, failure distributions, latency averages, batch ids, schema version, source run count, model options, and source file paths. Source paths are provenance pointers into local or reviewed raw runs; the report must still contain enough aggregate evidence to stand on its own in a public clone. Public summaries are curated snapshots rather than final leaderboard claims.
+Reports include model/task accuracy, pass/fail counts, answer distributions, failure distributions, latency averages, batch ids, schema version, source run count, model options, and source file paths. Source paths are provenance pointers into local or reviewed raw runs; the report must still contain enough aggregate evidence to stand on its own in a public clone. Public summaries are curated snapshots rather than final leaderboard claims.

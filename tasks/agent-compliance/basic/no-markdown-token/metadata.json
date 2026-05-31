@@ -1,0 +1,15 @@
+{
+  "capability": "agent-compliance",
+  "complexity": "basic",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only READY-204.",
+  "domain": "output-constraint",
+  "expected_answer": "READY-204",
+  "expected_behavior": "Return only READY-204.",
+  "expected_failure_modes": [
+    "markdown fence",
+    "quote wrapping",
+    "extra prose"
+  ],
+  "id": "no-markdown-token"
+}

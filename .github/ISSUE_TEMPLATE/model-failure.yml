@@ -1,5 +1,5 @@
 name: Observed model failure
-description: Share a model failure that may become a benchmark task.
+description: Share a reproducible model run or failure that may become benchmark evidence.
 title: "Failure: "
 labels: ["failure-corpus"]
 body:
@@ -10,16 +10,56 @@ body:
       placeholder: phi4-mini
     validations:
       required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Repository commit SHA
+      description: Commit used for the run so maintainers or agents can reproduce it.
+      placeholder: git rev-parse HEAD
+    validations:
+      required: true
+  - type: input
+    id: batch
+    attributes:
+      label: Batch id
+      placeholder: external-phi4-mini-20260601
+    validations:
+      required: true
+  - type: input
+    id: options
+    attributes:
+      label: Run options
+      description: Include repeat count, temperature, num_predict, seed policy, and Ollama version.
+      placeholder: repeat=10 temperature=0.2 num_predict=32 seed=5312026 ollama=...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction commands
+      description: Paste exact clone, install/model pull, run, summarize, and build commands.
+      value: |
+        git clone https://github.com/shahzebqazi/benchmark-euterpea.git
+        cd benchmark-euterpea
+        git checkout <commit-sha>
+        ollama pull <model>
+        python3 scripts/run_batch.py --model <model> --repeat 10 --batch-id <batch-id> --temperature 0.2 --num-predict 32
+        python3 scripts/summarize_runs.py --batch-id <batch-id>
+        python3 scripts/build_site.py
+    validations:
+      required: true
   - type: textarea
     id: prompt
     attributes:
       label: Prompt or task
+      description: Name the task id(s) or paste the task prompt if reporting one failure.
     validations:
       required: true
   - type: textarea
     id: observed
     attributes:
-      label: Observed output
+      label: Observed output or run summary
+      description: Include pass rate by section/task when reporting a full run.
     validations:
       required: true
   - type: textarea
@@ -32,3 +72,4 @@ body:
     id: notes
     attributes:
       label: Why this matters
+      description: Explain whether this suggests a verifier issue, task ambiguity, new failure-corpus entry, or new task proposal.

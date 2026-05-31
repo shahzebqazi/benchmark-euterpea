@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only B#.",
+  "domain": "enharmonic-spelling",
+  "expected_answer": "B#",
+  "expected_behavior": "Return only B#.",
+  "expected_failure_modes": [
+    "enharmonic shortcut",
+    "uses natural minor subtonic",
+    "extra prose"
+  ],
+  "id": "c-sharp-harmonic-minor-leading-tone"
+}

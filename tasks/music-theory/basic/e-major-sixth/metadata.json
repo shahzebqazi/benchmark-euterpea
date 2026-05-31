@@ -1,0 +1,15 @@
+{
+  "capability": "music-theory",
+  "complexity": "basic",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only C#.",
+  "domain": "diatonic-scale-degree",
+  "expected_answer": "C#",
+  "expected_behavior": "Return only C#.",
+  "expected_failure_modes": [
+    "wrong scale degree",
+    "enharmonic misspelling",
+    "extra prose"
+  ],
+  "id": "e-major-sixth"
+}

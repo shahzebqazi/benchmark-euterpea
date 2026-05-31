@@ -1,0 +1,15 @@
+{
+  "capability": "euterpea-stubs",
+  "complexity": "intermediate",
+  "contamination_risk": "low to moderate; source-grounded concept with original prompt wording and strict verifier",
+  "description": "Return only 2,1.",
+  "domain": "symbolic-duration-transform",
+  "expected_answer": "2,1",
+  "expected_behavior": "Return only 2,1.",
+  "expected_failure_modes": [
+    "wrong scaling",
+    "uses fractions",
+    "extra prose"
+  ],
+  "id": "double-duration-list"
+}
